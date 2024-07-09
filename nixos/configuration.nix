@@ -85,7 +85,7 @@
 
   
   environment.systemPackages = with pkgs; [
-      vim git wget curl firefox vscode
+      vim git wget curl vscode firefox
   ];
   environment.variables.EDITOR = "vim";
   sound.enable = true;

@@ -42,11 +42,21 @@
   home = {
     username = "gabriel";
     homeDirectory = "/home/gabriel";
+    packages = with pkgs;[
+        neofetch
+        tmux
+        unzip
+        p7zip
+        ripgrep
+        fzf
+        firefox 
+        vscode
+    ]
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  #home.packages = with pkgs; [ firefox vscode neofetch];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
