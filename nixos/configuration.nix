@@ -13,11 +13,14 @@
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
+  # boot.kernelPackages = pkgs.linuxPackages_lateset;
+  # boot.initrd.kernelModules = ["amdgpu"];
   boot.loader = {
     grub = {
       enable = true;
       device = "nodev";
       efiSupport = true;
+      configurationLimit = 5;
       extraEntries = ''
           menuentry "Windows" {
               search --file --no-floppy --set=root /EFI/Microsoft/Boot/bootmgfw.efi
@@ -64,6 +67,8 @@
       extraGroups = ["wheel"];
     };
   };
+  # drivers.amdgpu.enable = true;
+
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;

@@ -42,16 +42,6 @@
   home = {
     username = "gabriel";
     homeDirectory = "/home/gabriel";
-    # packages = with pkgs;[
-    #     neofetch
-    #     tmux
-    #     unzip
-    #     p7zip
-    #     ripgrep
-    #     fzf
-    #     firefox 
-    #     vscode
-    # ]
   };
 
   # Add stuff for your user as you see fit:
@@ -65,6 +55,9 @@
     p7zip
     ripgrep
     fzf
+    kitty
+    # wechat-uos
+    google-chrome
   ];
 
   # Enable home-manager and git
