@@ -94,8 +94,7 @@ install() {
     sleep 0.2
 
     # Last Confirmation
-    echo -en "You are about to start the system build, do you want to process ? "
-    confirm
+    echo -en "You are about to start the system build"
 
     # Build the system (flakes + home manager)
     echo -e "\nBuilding the system...\n"
