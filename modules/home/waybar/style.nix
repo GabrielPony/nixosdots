@@ -7,15 +7,15 @@ let custom = {
     secondary_accent= "89b4fa";
     tertiary_accent = "f5f5f5";
     background = "11111B";
-    opacity = "0.98";
+    opacity = "0.90";
 };
 in 
 {
   programs.waybar.style = ''
 
     * {
-        border: none;
-        border-radius: 0px;
+        border: 2px;
+        border-radius: 3px;
         padding: 0;
         margin: 0;
         min-height: 0px;
@@ -25,7 +25,7 @@ in
     }
 
     window#waybar {
-        background: none;
+        background: #171724 ;
     }
 
     #workspaces {
