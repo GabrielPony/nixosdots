@@ -36,6 +36,8 @@
     # C / C++
     gcc
     gnumake
+    make
+    cmake
 
     # Python
     python3
