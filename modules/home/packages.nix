@@ -32,6 +32,7 @@
     winetricks
     wineWowPackages.wayland
     yesplaymusic
+    tmux
 
     # C / C++
     gcc

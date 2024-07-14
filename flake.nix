@@ -1,6 +1,8 @@
 {
   description = "gabriel's nixos configuration";
 
+  outputs = inputs: import ./control inputs;
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
@@ -40,25 +42,32 @@
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, self, ...} @ inputs:
-  let
-    selfPkgs = import ./pkgs;
-    username = "gabriel";
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    lib = nixpkgs.lib;
-  in
-  {
-    overlays.default = selfPkgs.overlay;
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ (import ./hosts/desktop) ];
-        specialArgs = { host="desktop"; inherit self inputs username ; };
-      };
-    };
-  };
+
+  
+  # outputs = { nixpkgs, self, ...} @ inputs:
+  # let
+  #   selfPkgs = import ./pkgs;
+  #   username = "gabriel";
+  #   system = "x86_64-linux";
+  #   pkgs = import nixpkgs {
+  #     inherit system;
+  #     config.allowUnfree = true;
+  #   };
+  #   lib = nixpkgs.lib;
+  # in
+  # {
+  #   overlays.default = selfPkgs.overlay;
+  #   nixosConfigurations = {
+  #     desktop = nixpkgs.lib.nixosSystem {
+  #       inherit system;
+  #       modules = [ (import ./hosts/desktop) ];
+  #       specialArgs = { host="desktop"; inherit self inputs username ; };
+  #     };
+  #     laptop = nixpkgs.lib.nixosSystem {
+  #       inherit system;
+  #       modules = [ (import ./hosts/laptop) ];
+  #       specialArgs = { host="laptop"; inherit self inputs username ; };
+  #     };
+  #   };
+  # };
 }

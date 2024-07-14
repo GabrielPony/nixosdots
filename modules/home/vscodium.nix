@@ -96,6 +96,11 @@
         key = "ctrl+s";
         command = "workbench.action.files.saveFiles";
       }
+      # {
+      #   key = "ctrl+shift+t";
+      #   command = "workbench.files.a";
+      # }
+      
     ];
   };
 }
