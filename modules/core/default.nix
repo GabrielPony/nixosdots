@@ -12,6 +12,6 @@
     ++ [ (import ./system.nix) ]
     ++ [ (import ./user.nix) ]
     ++ [ (import ./wayland.nix) ]
-    # ++ [ (import ./gamemode.nix) ]
     ++ [ (import ./virtualization.nix) ];
+    # ++ [ (import ./gamemode.nix) ]
 }

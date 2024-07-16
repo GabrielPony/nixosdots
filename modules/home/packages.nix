@@ -32,8 +32,6 @@
     winetricks
     wineWowPackages.wayland
     yesplaymusic
-    steam
-    gamemode
     # stm32cubemx
     qq 
 
