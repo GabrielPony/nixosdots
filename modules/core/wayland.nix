@@ -14,4 +14,7 @@
   environment.systemPackages = with pkgs; [
     # xwaylandvideobridge
   ];
+  fonts.packages = with pkgs; [
+    wqy_zenhei 
+  ];
 }
