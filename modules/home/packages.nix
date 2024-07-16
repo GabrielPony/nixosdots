@@ -32,6 +32,8 @@
     winetricks
     wineWowPackages.wayland
     yesplaymusic
+    # stm32cubemx
+    qq 
 
     # C / C++
     gcc
