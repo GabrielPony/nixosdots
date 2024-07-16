@@ -1,5 +1,10 @@
-{ pkgs, lib, ... }: 
-{
+{ pkgs, lib, ... }: let
+    # programs = lib.makeBinPath [
+    # config.programs.hyprland.package
+    # pkgs.coreutils
+    # pkgs.power-profiles-daemon
+  # ];
+in {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
