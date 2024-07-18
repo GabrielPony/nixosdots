@@ -17,8 +17,7 @@
 
     ];
 
-    extraConfigBeforePlugins= ''
-
+    extraConfig= ''
     # unbind b
     # unbind =
     # unbind -
