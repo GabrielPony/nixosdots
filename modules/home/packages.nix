@@ -32,9 +32,12 @@
     winetricks
     wineWowPackages.wayland
     yesplaymusic
-    # stm32cubemx
+    stm32cubemx
     qq 
+    rustdesk
 
+    # Emedd
+    stlink
     # C / C++
     gcc
     gnumake
