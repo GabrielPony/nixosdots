@@ -35,6 +35,7 @@
     stm32cubemx
     qq 
     rustdesk
+    tmux
 
     # Emedd
     stlink
