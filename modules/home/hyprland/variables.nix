@@ -23,9 +23,9 @@
     XDG_SESSION_TYPE = "wayland";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
+    GTK_IM_MODULE = "wayland";
     GTK_THEME = "Dracula";
     GLFW_IM_MODULE = "fcitx";
-    GTK_IM_MODULE = "fcitx";
     INPUT_METHOD = "fcitx";
     XMODIFIERS = "@im=fcitx";
     IMSETTINGS_MODULE = "fcitx";

@@ -17,7 +17,7 @@
         "swaync &"
         "wl-paste --watch cliphist store &"
         "hyprlock"
-        "fcitx5 -d -r"
+        "fcitx5 -d"
       ];
 
       monitor = [
@@ -135,6 +135,7 @@
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
+        "$mainMod, Delete, exit"
         "$mainMod, Return, exec, kitty"
         "ALT, Return, exec, kitty --title float_kitty"
         "$mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'"
