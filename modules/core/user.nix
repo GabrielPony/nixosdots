@@ -19,9 +19,13 @@
 
   users.users.${username} = {
     isNormalUser = true;
+    initialPassword = "1111";
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDG61wlVKXhxGviPXyd01R78YiNY9+HphzEFkm73kFe4 aoengo@outlook.com"
+    ];
   };
   nix.settings.allowed-users = [ "${username}" ];
 }

@@ -10,6 +10,7 @@
       plugins = [ "git" "fzf" ];
     };
     initExtraFirst = ''
+      unset tmux
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
     '';
