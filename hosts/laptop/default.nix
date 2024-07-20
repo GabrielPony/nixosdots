@@ -1,6 +1,7 @@
 { pkgs, lib, ... }: 
 {
   imports = [
+    ./addon-configuration.nix
     ./hardware-configuration.nix
     ./../../modules/core
   ];
