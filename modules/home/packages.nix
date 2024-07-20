@@ -33,8 +33,8 @@
     wineWowPackages.wayland
     yesplaymusic
     # stm32cubemx
-    qq 
-    rustdesk
+    qq
+    rustdesk-flutter
     tmux
 
     # Emedd
