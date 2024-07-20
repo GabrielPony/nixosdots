@@ -69,6 +69,7 @@
     wget
     xdg-utils
     xxd
+    openssh
     inputs.alejandra.defaultPackage.${system}
   ]);
 }
