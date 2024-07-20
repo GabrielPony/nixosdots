@@ -57,12 +57,12 @@
       desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [ (import ./hosts/desktop) ];
-        specialArgs = { host="desktop"; inherit self inputs username ; };
+        specialArgs = { host="desktop"; inherit self inputs username lib ; };
       };
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [ (import ./hosts/laptop) ];
-        specialArgs = { host="laptop"; inherit self inputs username ; };
+        specialArgs = { host="laptop"; inherit self inputs username lib ; };
       };
     };
   };
