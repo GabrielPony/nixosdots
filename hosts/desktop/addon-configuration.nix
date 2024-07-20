@@ -7,13 +7,12 @@
     }];
   };
 
-  home-manager = {
-    users.${username} = {
-      wayland.windowManager.hyprland.settings.monitor = [
-          "DP-3, 3840x2160@60,     0x0, 1"
-          "DP-2, 1920x1080@239.99, 3840x0, 1"
-      ];
-    };
+  home-manager.users.${username} = {
+    wayland.windowManager.hyprland.settings.monitor = [
+        "DP-3, 3840x2160@60,     0x0, 1"
+        "DP-2, 1920x1080@239.99, 3840x0, 1"
+    ];
   };
+  
   boot.kernelModules = [ "kvm-intel" ];
 }
