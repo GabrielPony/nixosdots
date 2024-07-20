@@ -99,6 +99,7 @@ install() {
     cp -r wallpapers/otherWallpaper/catppuccin/* ~/Pictures/wallpapers/others/
     cp -r wallpapers/otherWallpaper/nixos/* ~/Pictures/wallpapers/others/
     cp -r wallpapers/otherWallpaper/others/* ~/Pictures/wallpapers/others/
+    cp -r wallpapers/otherWallpaper/Favorites/* ~/Pictures/wallpapers/others/
     sleep 0.2
 
     # Get the hardware configuration
