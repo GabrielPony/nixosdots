@@ -36,6 +36,8 @@
     qq
     rustdesk-flutter
     tmux
+    alacritty
+    bambu-studio
 
     # Emedd
     stlink
