@@ -12,6 +12,9 @@
       ms-python.python
       # C/C++
       ms-vscode.cpptools
+      ms-vscode.cpptools-extension-pack
+      twxs.cmake
+      ms-vscode.cmake-tools
       # OCaml
       ocamllabs.ocaml-platform
 
