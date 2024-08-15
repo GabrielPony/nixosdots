@@ -17,14 +17,8 @@
         "swaync &"
         "wl-paste --watch cliphist store &"
         "hyprlock"
-        "fcitx5 -d"
       ];
 
-      # Defined in addon-configuration.nix
-      # monitor = [
-      #   "DP-3, 3840x2160@60,     0x0, 1"
-      #   "DP-2, 1920x1080@239.99, 3840x0, 1"
-      # ];
       input = {
         kb_layout = "us,fr";
         kb_options ="grp:alt_caps_toggle"; 
@@ -77,8 +71,8 @@
       decoration = {
         rounding = 10;
         active_opacity = 0.80;
-        inactive_opacity = 0.90;
-        fullscreen_opacity = 0.9;
+        # inactive_opacity = 0.90;
+        # fullscreen_opacity = 1.0;
 
         blur = {
           enabled = true;
@@ -152,7 +146,7 @@
         "$mainMod SHIFT, Escape, exec, shutdown-script"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
-        "$mainMod, E, exec, nemo"
+        "$mainMod, E, exec, nautilus"
         "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod, W,exec, wallpaper-picker"
@@ -198,12 +192,16 @@
         "$mainMod SHIFT, right, movewindow, r"
         "$mainMod SHIFT, up, movewindow, u"
         "$mainMod SHIFT, down, movewindow, d"
-        "$mainMod ALT, left, resizeactive,  -80 0"
+        "$mainMod ALT, left, resizeactive, -80 0"
         "$mainMod ALT, right, resizeactive, 80 0"
         "$mainMod ALT, up, resizeactive, 0 -80"
         "$mainMod ALT, down, resizeactive, 0 80"
         "$mainMod CTRL, Right, workspace, r+1"
         "$mainMod CTRL, Left, workspace, r-1"
+        # "$mainMod ALT, left, moveactive,  -80 0"
+        # "$mainMod ALT, right, moveactive, 80 0"
+        # "$mainMod ALT, up, moveactive, 0 -80"
+        # "$mainMod ALT, down, moveactive, 0 80"
 
         # media and volume controls
         ",XF86AudioRaiseVolume,exec, pamixer -i 2"

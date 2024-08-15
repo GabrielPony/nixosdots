@@ -1,7 +1,13 @@
 { inputs, pkgs, ... }: 
+let
+  _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {}; 
+in
 {
   home.packages = (with pkgs; [
+    _2048
+    audacity
     bitwise                           # cli tool for bit / hex manipulation
+    cbonsai
     evince                            # gnome pdf viewer
     eza                               # ls replacement
     entr                              # perform action when file change
@@ -16,9 +22,10 @@
     jdk17                             # java
     lazygit
     libreoffice
-    cinnamon.nemo-with-extensions     # file manager
+    nautilus
     nitch                             # systhem fetch util
     nix-prefetch-github
+    pipes
     prismlauncher                     # minecraft launcher
     ripgrep                           # grep replacement
     soundwireserver                   # pass audio to android phone
@@ -27,7 +34,7 @@
     toipe                             # typing test in the terminal
     valgrind                          # c memory analyzer
     yazi                              # terminal file manager
-    youtube-dl
+    yt-dlp-light
     zenity
     winetricks
     wineWowPackages.wayland
@@ -38,9 +45,16 @@
     tmux
     alacritty
     bambu-studio
+    feishu
+    usbutils
+    meld
 
     # Emedd
     stlink
+    openocd
+    gcc-arm-embedded-9
+    jetbrains.clion
+
     # C / C++
     gcc
     gnumake

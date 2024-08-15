@@ -41,14 +41,12 @@
         on-click= "activate";
         format-icons= {
             "1"= "󰣇";
-            "2"= "󰣇";
             urgent= "";
             default = "󰣇";
             sort-by-number= true;
         };
         persistent-workspaces = {
             "1"= [];
-            "2"= [];
         };
     };
     memory= {
