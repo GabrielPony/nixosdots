@@ -15,8 +15,8 @@
     HandlePowerKey=ignore
   '';
   services.udev.extraRules=''
-    USBSYSTEM=="usb",ATTR{idVendor}=="0483",ATTR{idProduct}=="374b",GROUP="gabriel",MODE="0666"
-    USBSYSTEM=="usb",ATTR{idVendor}=="0483",ATTR{idProduct}=="3748",GROUP="gabriel",MODE="0666"
-    USBSYSTEM=="usb",ATTR{idVendor}=="0483",ATTR{idProduct}=="3744",GROUP="gabriel",MODE="0666"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="374b", MODE="0666"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="3748", MODE="0666"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="3744", MODE="0666"
   '';
 }
