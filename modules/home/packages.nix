@@ -39,7 +39,6 @@ in
     winetricks
     wineWowPackages.wayland
     yesplaymusic
-    # stm32cubemx
     qq
     rustdesk-flutter
     tmux
@@ -54,6 +53,7 @@ in
     openocd
     gcc-arm-embedded-9
     jetbrains.clion
+    stm32cubemx
 
     # C / C++
     gcc
