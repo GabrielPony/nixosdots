@@ -5,7 +5,6 @@ let
 in
 {
   home.packages = (with pkgs; [
-    wayland-scanner
     _2048
     audacity
     bitwise                           # cli tool for bit / hex manipulation
@@ -49,7 +48,6 @@ in
     feishu
     usbutils
     meld
-    minicom
 
     # Emedd
     stlink

@@ -24,7 +24,6 @@
     wget
     git
     vim
-    cmake
   ];
 
   time.timeZone = "Asian/Shanghai";
