@@ -24,7 +24,6 @@
     wget
     git
     vim
-    make
     cmake
   ];
 
