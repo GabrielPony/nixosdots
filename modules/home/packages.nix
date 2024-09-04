@@ -1,6 +1,7 @@
 { inputs, pkgs, ... }: 
 let
   _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {}; 
+  # _stm32cubemx = pkgs.callPackage ../../pkg/stm32cubemx/default.nix {}; # for specific stm32cubemx version
 in
 {
   home.packages = (with pkgs; [
@@ -47,13 +48,14 @@ in
     feishu
     usbutils
     meld
+    minicom
 
     # Emedd
     stlink
     openocd
     gcc-arm-embedded-9
     jetbrains.clion
-    stm32cubemx
+    # _stm32cubemx
 
     # C / C++
     gcc
