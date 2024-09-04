@@ -24,7 +24,7 @@ let
     nativeBuildInputs = [ fdupes icoutils imagemagick ];
     desktopItem = makeDesktopItem {
       name = "STM32CubeMX";
-      exec = "stm32cubemx";
+      exec = "stm32cubemx --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland";
       desktopName = "STM32CubeMX";
       categories = [ "Development" ];
       icon = "stm32cubemx";

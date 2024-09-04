@@ -49,7 +49,7 @@ in
     let desktopFile = pkgs.makeDesktopItem {
       name = "jetbrains-rider";
       desktopName = "Rider";
-      exec = "\"${_rider}/bin/rider\"";
+      exec = "\"${_rider}/bin/rider --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland\"";
       icon = "rider";
       type = "Application";
       # Don't show desktop icon in search or run launcher
