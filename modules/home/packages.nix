@@ -48,6 +48,8 @@ in
     feishu
     usbutils
     meld
+    orca-slicer
+    motrix
 
     # Emedd
     stlink
