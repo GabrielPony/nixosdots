@@ -23,9 +23,7 @@
         kb_layout = "us,fr";
         kb_options ="grp:alt_caps_toggle"; 
         numlock_by_default = true;
-        follow_mouse = 0;
-        float_switch_override_focus = 0;
-        mouse_refocus = 0;
+        follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
           natural_scroll = true;
@@ -140,22 +138,20 @@
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
-        "$mainMod, Space, togglefloating,"
         "$mainMod, Space, centerwindow,"
-        "$mainMod, Space, resizeactive, exact 950 600"
-        "$mainMod, D, exec, rofi -show drun"
+        "$mainMod, Space, togglefloating,"
+        "$mainMod, Space, resizeactive, exact 1280 720" 
+        "$mainMod, A, exec, fuzzel"
         "$mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
         "$mainMod, Escape, exec, swaylock"
-        "ALT, Escape, exec, hyprlock"
-        "$mainMod SHIFT, Escape, exec, power-menu"
+        "$mainMod SHIFT, Escape, exec, shutdown-script"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, E, exec, nautilus"
-        "$mainMod SHIFT, B, exec, toggle_waybar"
+        "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod, W,exec, wallpaper-picker"
-        "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
@@ -204,6 +200,10 @@
         "$mainMod ALT, down, resizeactive, 0 80"
         "$mainMod CTRL, Right, workspace, r+1"
         "$mainMod CTRL, Left, workspace, r-1"
+        # "$mainMod ALT, left, moveactive,  -80 0"
+        # "$mainMod ALT, right, moveactive, 80 0"
+        # "$mainMod ALT, up, moveactive, 0 -80"
+        # "$mainMod ALT, down, moveactive, 0 80"
 
         # media and volume controls
         ",XF86AudioRaiseVolume,exec, pamixer -i 2"
@@ -213,6 +213,8 @@
         ",XF86AudioNext,exec, playerctl next"
         ",XF86AudioPrev,exec, playerctl previous"
         ",XF86AudioStop, exec, playerctl stop"
+        # "$mainMod, mouse_down, workspace, e-1"
+        # "$mainMod, mouse_up, workspace, e+1"
 
         # laptop brigthness
         ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
@@ -221,7 +223,7 @@
         "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
 
         # clipboard manager
-        "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;}' | cliphist decode | wl-copy"
+        "$mainMod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
       ];
 
       # mouse binding
@@ -232,9 +234,6 @@
 
       # windowrule
       windowrule = [
-        "float,qView"
-        "center,qView"
-        "size 1200 725,qView"
         "float,imv"
         "center,imv"
         "size 1200 725,imv"
@@ -246,7 +245,10 @@
         "center,title:^(float_label)$"
         "size 950 600,title:^(float_label)$"
         "float,audacious"
-        "pin,rofi"
+        "workspace 8 silent, audacious"
+        # "pin,wofi"
+        # "float,wofi"
+        # "noborder,wofi"
         "tile, neovide"
         "idleinhibit focus,mpv"
         "float,udiskie"
@@ -258,7 +260,7 @@
         "move 40 55%,title:^(Volume Control)$"
       ];
 
-
+      # windowrulev2
       windowrulev2 = [
         "float, title:^(Picture-in-Picture)$"
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
@@ -267,20 +269,11 @@
         "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
         "opacity 1.0 override 1.0 override, class:(Aseprite)"
         "opacity 1.0 override 1.0 override, class:(Unity)"
-        "opacity 1.0 override 1.0 override, class:(floorp)"
-        "opacity 1.0 override 1.0 override, class:(evince)"
-        "workspace 1, class:^(floorp)$"
-        "workspace 4, class:^(discord)$"
-        "workspace 4, class:^(Gimp-2.10)$"
-        "workspace 4, class:^(Aseprite)$"
-        "workspace 5, class:^(Audacious)$"
-        "workspace 5, class:^(Spotify)$"
         "idleinhibit focus, class:^(mpv)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "float,class:^(zenity)$"
         "center,class:^(zenity)$"
         "size 850 500,class:^(zenity)$"
-        "size 850 500,title:^(File Upload)$"
         "float,class:^(pavucontrol)$"
         "float,class:^(SoundWireServer)$"
         "float,class:^(.sameboy-wrapped)$"
@@ -292,7 +285,6 @@
         "float,class:^(error)$"
         "float,class:^(confirmreset)$"
         "float,title:^(Open File)$"
-        "float,title:^(File Upload)$"
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
@@ -303,7 +295,8 @@
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
       ];
-  };
+
+    };
 
     extraConfig = "
       xwayland {

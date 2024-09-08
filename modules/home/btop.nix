@@ -4,7 +4,7 @@
     enable = true;
     
     settings = {
-      color_theme = "TTY";
+      color_theme = "dracula";
       theme_background = false;
       update_ms = 500;
     };

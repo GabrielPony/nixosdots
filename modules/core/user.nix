@@ -23,6 +23,8 @@
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+    # openssh.authorizedKeys.keys = [
+    # ];
   };
   nix.settings.allowed-users = [ "${username}" ];
 }
