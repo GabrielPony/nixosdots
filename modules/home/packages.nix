@@ -1,44 +1,85 @@
 { inputs, pkgs, ... }: 
-let
+let 
   _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {}; 
-  _stm32cubemx = pkgs.callPackage ../../pkgs/stm32cubemx/default.nix {}; # for specific stm32cubemx version
+  _stm32cubemx = pkgs.callPackage ../../pkgs/stm32cubemx/default.nix {}; 
 in
 {
   home.packages = (with pkgs; [
     _2048
-    audacity
+
+    ## CLI utility
+    ani-cli
     bitwise                           # cli tool for bit / hex manipulation
-    cbonsai
-    evince                            # gnome pdf viewer
+    caligula                          # User-friendly, lightweight TUI for disk imaging
+    cliphist                          # clipboard manager
     eza                               # ls replacement
     entr                              # perform action when file change
     fd                                # find replacement
+    ffmpeg
     file                              # Show file information 
-    fzf                               # fuzzy finder
     gtt                               # google translate TUI
     gifsicle                          # gif utility
-    gimp
     gtrash                            # rm replacement, put deleted files in system trash
     hexdump
-    jdk17                             # java
+    imv                               # image viewer
+    killall
     lazygit
-    libreoffice
-    nautilus
+    libnotify
+	  man-pages					            	  # extra man pages
+    mpv                               # video player
+    ncdu                              # disk space
     nitch                             # systhem fetch util
-    nix-prefetch-github
-    pipes
-    prismlauncher                     # minecraft launcher
+    openssl
+    onefetch                          # fetch utility for git repo
+    pamixer                           # pulseaudio command line mixer
+    playerctl                         # controller for media players
+    poweralertd
+    programmer-calculator
+    qview                             # minimal image viewer
     ripgrep                           # grep replacement
-    soundwireserver                   # pass audio to android phone
     tdf                               # cli pdf viewer
+    tldr
     todo                              # cli todo list
     toipe                             # typing test in the terminal
+    ttyper                            # cli typing test
+    unzip
     valgrind                          # c memory analyzer
+    wl-clipboard                      # clipboard utils for wayland (wl-copy, wl-paste)
+    wget
     yazi                              # terminal file manager
     yt-dlp-light
-    zenity
+    xdg-utils
+    xxd
+
+    ## CLI 
+    cbonsai                           # terminal screensaver
+    cmatrix
+    pipes                             # terminal screensaver
+    sl
+    tty-clock                         # cli clock
+
+    ## GUI Apps
+    audacity
+    bleachbit                         # cache cleaner
+    gimp
+    libreoffice
+    nix-prefetch-github
+    pavucontrol                       # pulseaudio volume controle (GUI)
+    qalculate-gtk                     # calculator
+    soundwireserver                   # pass audio to android phone
+    vlc
     winetricks
     wineWowPackages.wayland
+    zenity
+
+    # C / C++
+    gcc
+    gdb
+    gnumake
+
+    # Python
+    python3
+
     yesplaymusic
     qq
     rustdesk-flutter
@@ -63,31 +104,7 @@ in
     gnumake
     cmake
 
-    # Python
-    python3
 
-    bleachbit                         # cache cleaner
-    cmatrix
-    gparted                           # partition manager
-    ffmpeg
-    imv                               # image viewer
-    killall
-    libnotify
-	  man-pages					            	  # extra man pages
-    mpv                               # video player
-    ncdu                              # disk space
-    openssl
-    pamixer                           # pulseaudio command line mixer
-    pavucontrol                       # pulseaudio volume controle (GUI)
-    playerctl                         # controller for media players
-    wl-clipboard                      # clipboard utils for wayland (wl-copy, wl-paste)
-    cliphist                          # clipboard manager
-    poweralertd
-    qalculate-gtk                     # calculator
-    unzip
-    wget
-    xdg-utils
-    xxd
     inputs.alejandra.defaultPackage.${system}
   ]);
 }
