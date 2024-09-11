@@ -44,12 +44,12 @@ in
     rustdesk-flutter
     tmux
     alacritty
-    bambu-studio
     feishu
     usbutils
     meld
     orca-slicer
     motrix
+    minicom
 
     # Emedd
     stlink
