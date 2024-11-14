@@ -1,4 +1,11 @@
 { pkgs, inputs, username, host, ...}:
+let
+  hostConfig = {
+    "desktop" = [ ./../home/default.desktop.nix ];
+    "laptop" = [ ./../home/default.desktop.nix ];
+    "wsl" = [ ./../home/default.mini.nix ];
+  }.${host} or [ ./../home ];
+in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -6,10 +13,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs username host; };
     users.${username} = {
-      imports = 
-        if (host == "desktop") then 
-          [ ./../home/default.desktop.nix ] 
-        else [ ./../home ];
+      imports = hostConfig;
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "24.05";
@@ -17,14 +21,17 @@
     };
   };
 
+  
   users.users.${username} = {
+    uid = 1000;
     isNormalUser = true;
     initialPassword = "1111";
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
     # openssh.authorizedKeys.keys = [
     # ];
   };
   nix.settings.allowed-users = [ "${username}" ];
+  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 }

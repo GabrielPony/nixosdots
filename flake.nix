@@ -35,6 +35,10 @@
       url = "github:catppuccin/starship";
       flake = false;
     };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     spicetify-nix.url = "github:gerg-l/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -61,6 +65,11 @@
         inherit system;
         modules = [ (import ./hosts/laptop) ];
         specialArgs = { host="laptop"; inherit self inputs username lib ; };
+      };
+      wsl = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ (import ./hosts/wsl) ];
+        specialArgs = { host="wsl"; inherit self inputs username lib ; };
       };
     };
   };

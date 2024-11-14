@@ -3,7 +3,7 @@
   imports = [
     ./addon-configuration.nix
     ./hardware-configuration.nix
-    ./../../modules/core
+    ./../../modules/core/default.desktop.nix
   ];
 
   nix.nixPath = lib.mkForce ["/etc/nix/inputs"];
