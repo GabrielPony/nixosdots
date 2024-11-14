@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  nvim-config = pkgs.callPackage ./../../pkgs/customnvim/default.nix {};
+  nvim-config = pkgs.callPackage ./../../pkgs/custom/nvim.nix {};
 in
 {
   programs.neovim = {

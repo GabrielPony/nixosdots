@@ -26,10 +26,9 @@ stdenv.mkDerivation rec {
   # 安装阶段
   installPhase = ''
     echo "LazyVim 源目录: ${src}"
-    echo "自定义配置源目录: ${custom-src}"
     
     mkdir -p $out/config
     cp -r ./* $out/config/
-    # cp -r ${custom-src} $out/config/
+
   '';
 }
