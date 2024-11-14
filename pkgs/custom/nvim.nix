@@ -31,8 +31,6 @@ stdenv.mkDerivation rec {
     cp -r ./* $out/config/
     cat ${custom-src}/custom/config/keymaps.lua >> $out/config/lua/config/keymaps.lua
     cat ${custom-src}/custom/config/options.lua >> $out/config/lua/config/options.lua
-
     cp -r ${custom-src}/custom/plugins/* $out/config/lua/plugins/
-
   '';
 }
