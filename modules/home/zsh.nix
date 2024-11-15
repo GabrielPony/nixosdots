@@ -1,5 +1,13 @@
-{ hostname, config, pkgs, host, ...}: 
+{ hostname, config, pkgs, host, lib,...}: 
+let
+  zsh-config = pkgs.callPackage ./../../pkgs/custom/zsh.nix {};
+in
 {
+  programs.fzf.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -7,29 +15,40 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "fzf" ];
+      plugins = [ "git" "fzf"];
+      custom = "$HOME/.config/.oh-my-zsh/custom"; # 自定义目录
+      theme ="powerlevel10k/powerlevel10k";
     };
-    initExtraFirst = ''
-      unset tmux
-      DISABLE_MAGIC_FUNCTIONS=true
-      export "MICRO_TRUECOLOR=1"
+    initExtra = ''
+      # 这里的配置会在 .zshrc 的末尾添加
+      # ZSH_CUSTOM="$HOME/.config/.oh-my-zsh/custom"
+      # ZSH_THEME="powerlevel10k/powerlevel10k"
+
+      P10K_FILE=$HOME/.config/.oh-my-zsh/custom/themes/.p10k.zsh
+      [[ ! -f $P10K_FILE ]] || source $P10K_FILE
+
+      # terminal color
+      if [[ -n $TMUX ]]; then
+        export TERM=tmux-256color
+      else
+        export TERM=xterm-256color
+      fi
+
     '';
+
+    # initExtraFirst = ''
+    #   unset tmux
+    #   DISABLE_MAGIC_FUNCTIONS=true
+    #   export "MICRO_TRUECOLOR=1"
+    # '';
+
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
       # Utils
-      c = "clear";
-      cd = "z";
-      tt = "gtrash put";
-      cat = "bat";
-      nano = "micro";
       code = "codium";
       py = "python";
       icat = "kitten icat";
-      dsize = "du -hs";
-      findw = "grep -rl";
-      pdf = "tdf";
-      open = "xdg-open";
 
       l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
       ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
@@ -43,35 +62,12 @@
       nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nixos-config#${host}";
       nix-flake-update = "sudo nix flake update ~/Documents/new_nixos#";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
-
-      # Git
-      ga   = "git add";
-      gaa  = "git add --all";
-      gs   = "git status";
-      gb   = "git branch";
-      gm   = "git merge";
-      gpl  = "git pull";
-      gplo = "git pull origin";
-      gps  = "git push";
-      gpst = "git push --follow-tags";
-      gpso = "git push origin";
-      gc   = "git commit";
-      gcm  = "git commit -m";
-      gcma = "git add --all && git commit -m";
-      gtag = "git tag -ma";
-      gch  = "git checkout";
-      gchb = "git checkout -b";
-      gcoe = "git config user.email";
-      gcon = "git config user.name";
-
-      # python
-      piv = "python -m venv .venv";
-      psv = "source .venv/bin/activate";
     };
   };
 
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  home.packages = (with pkgs; [
+    zsh-config
+  ]);
+
+  home.file.".config/.oh-my-zsh".source = "${zsh-config}/config";
 }
