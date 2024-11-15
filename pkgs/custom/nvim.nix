@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
     owner = "GabrielPony";  # 替换为你的 GitHub 用户名
     repo = "cutsom_lazyvim";  # 替换为你的仓库名
     rev = "main";  # 可以是分支名、tag 或 commit hash
-    sha256 = "sha256-2xvGVIVxc4iuvC6K6/2s4NpEZLsxYlLYhETp8pyQRy4=";  # 首次运行会提示正确的 hash
+    sha256 = "sha256-pk4A6b0CDwTEvK/XC29tMI6wt+zUI60YNT55W6B+dac=";  # 首次运行会提示正确的 hash
   };
 
   src = lazyvim-src;
@@ -28,6 +28,8 @@ stdenv.mkDerivation rec {
   # 安装阶段
   installPhase = ''
     mkdir -p $out/config
+    rm -r ./LICENSE
+    rm -r ./README.md
     cp -r ./* $out/config/
     cat ${custom-src}/custom/config/keymaps.lua >> $out/config/lua/config/keymaps.lua
     cat ${custom-src}/custom/config/options.lua >> $out/config/lua/config/options.lua
