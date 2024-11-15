@@ -26,5 +26,19 @@ in
     gcc
   ]);
 
-  home.file.".config/nvim".source = "${nvim-config}/config";
+  home.activation = {
+  linkNvimConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    # 创建目标目录（如果不存在）并设置权限
+    $DRY_RUN_CMD mkdir -p $HOME/.config/nvim
+    $DRY_RUN_CMD chmod 755 $HOME/.config/nvim
+
+    # 清理旧的链接（可选）
+    $DRY_RUN_CMD rm -rf $HOME/.config/nvim/*
+
+    # 创建软链接
+    for file in ${nvim-config}/config/*; do
+      $DRY_RUN_CMD ln -sf "$file" "$HOME/.config/nvim/$(basename $file)"
+    done
+  '';
+  };
 }
