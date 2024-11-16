@@ -1,11 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   tmux-config = pkgs.callPackage ./../../pkgs/custom/tmux.nix {};
 in
 {
   programs.tmux= {
-    enable = false;
-    #configPath = null;
+    enable = true;
     # shortcut = "a";
     # keyMode = "vi";
     # clock24 = true;
@@ -16,11 +15,11 @@ in
     # newSession = true;
     # terminal = "screen-256color";
     #
-    # plugins = with pkgs; [
-    #   tmuxPlugins.catppuccin
-    #
-    # ];
-
+    plugins = with pkgs; [
+    ];
+    extraConfig = ''
+      source ${tmux-config}/config/.tmux.conf
+    '';
     # extraConfig= ''
     # # unbind b
     # # unbind =
@@ -58,8 +57,16 @@ in
     tmux-config
   ]);
 
+  home.activation = {
+  linkTmuxConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    # 清理旧的链接（可选）
+    $DRY_RUN_CMD rm -rf $HOME/.config/tmux/tmux.conf.local
 
-  home.file.".config/tmux/tmux.conf".source = "${tmux-config}/config/.tmux.conf";
-  home.file.".config/tmux/tmux.conf.local".source = "${tmux-config}/.tmux.conf.local";
+    # 创建软链接
+    $DRY_RUN_CMD ln -sf ${tmux-config}/config/.tmux.conf.local "$HOME/.config/tmux/tmux.conf.local"
+  '';
+  };
+
+  # home.file.".config/tmux/tmux.conf.local".source = "${tmux-config}config/.tmux.conf.local";
 
 }
