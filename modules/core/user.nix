@@ -28,10 +28,14 @@ in
     initialPassword = "1111";
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
-    # shell = pkgs.zsh;
-    # openssh.authorizedKeys.keys = [
-    # ];
+    shell = pkgs.zsh;
+    # openssh.authorizedKeys.keys = [];
+
+    # 配置用户的 SSH 目录和密钥
+    # packages = [ pkgs.openssh ];
+    # openssh.authorizedKeys.keyFiles = [ ./ssh/authorized_keys ];  # 如果有授权密钥文件
   };
+
   nix.settings.allowed-users = [ "${username}" ];
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 }
