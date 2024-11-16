@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
     owner = "GabrielPony";  # 替换为你的 GitHub 用户名
     repo = "dotfiles";  # 替换为你的仓库名
     rev = "main";  # 可以是分支名、tag 或 commit hash
-    sha256 = "sha256-4GpY81s7BCH6nGlhjFspDwY6B1CpzfTD9VP3j6MJ8qA=";  # 首次运行会提示正确的 hash
+    sha256 = "sha256-cw72llPtP7Eq3TMa9X7IWInwZpeywgOiPdnQw02f1ts=";  # 首次运行会提示正确的 hash
   };
 
   src = ohmytmux-src;
