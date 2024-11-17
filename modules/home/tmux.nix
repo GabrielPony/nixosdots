@@ -11,8 +11,8 @@ in
   home.activation = {
   linkTmuxConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
     # 清理旧的链接（可选）
-    $DRY_RUN_CMD rm -rf $HOME/.config/tmux/tmux.conf.local
-    $DRY_RUN_CMD rm -rf $HOME/.config/tmux/tmux.conf
+    $DRY_RUN_CMD rm -rf $HOME/.config/tmux
+    $DRY_RUN_CMD mkdir -p $HOME/.config/tmux
 
     # 创建软链接
     $DRY_RUN_CMD cp ${tmux-config}/config/.tmux.conf.local "$HOME/.config/tmux/tmux.conf.local"
