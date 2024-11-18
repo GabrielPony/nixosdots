@@ -9,6 +9,16 @@
       enable = true;
       ports = [ 22 ];
     };
+    timesyncd = {
+        enable = true;
+        servers = [
+        "ntp.aliyun.com"
+        "ntp1.aliyun.com"
+        "ntp.tencent.com"    # 腾讯 NTP 服务器
+        "ntp.ubuntu.com"     # Ubuntu NTP 服务器
+        "time.windows.com"   # Windows 时间服务器
+        ];
+     };
   };
   services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed
