@@ -31,8 +31,10 @@ stdenv.mkDerivation rec {
     rm -r ./LICENSE
     rm -r ./README.md
     cp -r ./* $out/config/
-    cat ${custom-src}/nvim/custom/config/keymaps.lua >> $out/config/lua/config/keymaps.lua
-    cat ${custom-src}/nvim/custom/config/options.lua >> $out/config/lua/config/options.lua
+    for f in ${custom-src}/nvim/custom/config/*; do
+        filename=$(basename "$f")
+        cat "$f" >> "$out/config/lua/config/$filename"
+    done
     cp -r ${custom-src}/nvim/custom/plugins/* $out/config/lua/plugins/
   '';
 }
