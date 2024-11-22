@@ -6,7 +6,7 @@ in
 {
   programs.neovim = {
     enable = true;
-    
+
     # 安装必要的依赖包
     extraPackages = with pkgs; [
       git
@@ -24,6 +24,7 @@ in
   home.packages = (with pkgs; [
     nvim-config
     gcc
+    unzip
   ]);
 
   home.activation = {
