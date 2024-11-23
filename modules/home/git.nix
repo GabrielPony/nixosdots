@@ -1,12 +1,15 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;
-    
+
     userName = "GabrielPony";
     userEmail = "aoengo@outlook.com";
-    
-    extraConfig = { 
+
+    extraConfig = {
+      core = {
+        editor = "nvim";
+      };
       init.defaultBranch = "main";
       credential.helper = "store";
     };
