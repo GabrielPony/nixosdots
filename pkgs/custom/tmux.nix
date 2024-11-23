@@ -1,6 +1,4 @@
-{ stdenv, fetchFromGitHub, pkgs, ... }:
-
-with pkgs;
+{ stdenv, fetchFromGitHub, ... }:
 
 stdenv.mkDerivation rec {
   pname = "tmux-config";
