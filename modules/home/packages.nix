@@ -50,6 +50,7 @@ in
     orca-slicer
     motrix
     minicom
+    wechat-uos
 
     # Emedd
     stlink
