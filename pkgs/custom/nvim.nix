@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "GabrielPony"; # 替换为你的 GitHub 用户名
     repo = "dotfiles"; # 替换为你的仓库名
     rev = "main"; # 可以是分支名、tag 或 commit hash
-    sha256 = "sha256-OAldjM6Q6dT1sygYEUfLu7HK5iI+LWj4eHzvX0aiab0=";
+    sha256 = "sha256-weLWRBWDslSGXK8wwolSfC/IA5egVvy92AGn/6jnh6Q=";
   };
 
   src = custom-src;
