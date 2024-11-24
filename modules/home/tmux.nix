@@ -4,8 +4,9 @@ let
 in
 {
   home.packages = (with pkgs; [
-    tmux-config
     tmux
+    xclip
+    tmux-config
   ]);
 
   home.activation = {

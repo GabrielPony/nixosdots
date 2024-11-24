@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, host, ...}:
+{ pkgs, inputs, username, host, ... }:
 let
   hostConfig = {
     "desktop" = [ ./../home/default.desktop.nix ];
@@ -7,6 +7,16 @@ let
   }.${host} or [ ./../home ];
 in
 {
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = [ "root" "gabriel" ]; # 确保你的用户在这里
+      allowed-users = [ "@wheel" "@nixbld" ];
+      substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+    };
+  };
+
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useUserPackages = true;
@@ -21,11 +31,15 @@ in
     };
   };
 
-  
+  environment.profiles = [
+    "$HOME/.nix-profile"
+    "/etc/profiles/per-user/${username}"
+  ];
   users.users.${username} = {
     uid = 1000;
     isNormalUser = true;
     initialPassword = "1111";
+    home = "/home/${username}";
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
@@ -36,6 +50,4 @@ in
     # openssh.authorizedKeys.keyFiles = [ ./ssh/authorized_keys ];  # 如果有授权密钥文件
   };
 
-  nix.settings.allowed-users = [ "${username}" ];
-  nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 }

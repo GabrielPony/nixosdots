@@ -112,4 +112,7 @@ let
         xorg.libXfixes
         xorg.libXrandr
       ];
+     extraInstallCommands = ''
+      cp -rf ${package}/share $out/
+    '';
 }

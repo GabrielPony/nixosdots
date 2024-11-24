@@ -72,9 +72,9 @@ in
   programs.zsh.dotDir = ".config/zsh";
   home.packages = (with pkgs; [
     zsh
-    zsh-config
     fzf
     zoxide
+    zsh-config
   ]);
 
   home.file.".config/.oh-my-zsh".source = "${zsh-config}/config";
