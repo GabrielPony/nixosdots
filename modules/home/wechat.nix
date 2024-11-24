@@ -1,28 +1,26 @@
 { pkgs, ... }:
 let
-  _wechat = pkgs.wechat-uos.overrideAttrs (oldAttrs: {
-    postInstall = ''
-      ${oldAttrs.postInstall or ""}
+  wechatDesktop = pkgs.makeDesktopItem {
+    name = "com.tencent.wechat"; # 这会生成 com.tencent.wechat.desktop
+    desktopName = "WeChat";
+    genericName = "WeChat Client";
+    exec = "${pkgs.wechat-uos}/bin/wechat-uos --enable-features=UseOzonePlatform --ozone-platform=wayland -- %U";
+    icon = "com.tencent.wechat";
+    comment = "WeChat Client";
+    categories = [ "Utility" ];
+    terminal = false;
+    startupNotify = true;
+    startupWMClass = "wechat-uos";
+  };
 
-      # 完全覆盖原有的 desktop 文件
-      cat > $out/share/applications/com.tencent.wechat.desktop << EOF
-      [Desktop Entry]
-      Name=WeChat
-      Name[zh_CN]=微信
-      Comment=WeChat Client
-      Comment[zh_CN]=微信客户端
-      GenericName=WeChat Client
-      GenericName[zh_CN]=微信客户端
-      Exec=$out/bin/wechat-uos --enable-features=UseOzonePlatform --ozone-platform=wayland -- %U
-      StartupNotify=true
-      Icon=com.tencent.wechat
-      Type=Application
-      Categories=Utility;
-      Terminal=false
-      StartupWMClass=wechat-uos
-      EOF
+  _wechat = pkgs.symlinkJoin {
+    name = "wechat-uos";
+    paths = [ pkgs.wechat-uos ];
+    postBuild = ''
+      rm $out/share/applications/com.tencent.wechat.desktop
+      cp ${wechatDesktop}/share/applications/* $out/share/applications/
     '';
-  });
+  };
 in
 {
   home.packages = [ _wechat ];
