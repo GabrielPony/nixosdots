@@ -1,4 +1,4 @@
-{ pkgs, inputs, nixpkgs, self, username, host, ... }: 
+{ pkgs, inputs, nixpkgs, self, username, host, ... }:
 {
   networking = {
     interfaces.eno1.ipv4.addresses = [{
@@ -13,6 +13,6 @@
         "DP-2, 1920x1080@239.99, 3840x0, 1"
     ];
   };
-  
+
   boot.kernelModules = [ "kvm-intel" ];
 }
