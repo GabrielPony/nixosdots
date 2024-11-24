@@ -4,10 +4,10 @@ let
 
   # 创建一个临时目录来存储所有 fcitx5 配置
   fcitx5-config = pkgs.runCommand "fcitx5-config" { } ''
-    mkdir -p $out/fcitx5-config/conf
+    mkdir -p $out/conf
 
     # 创建 classicui.conf
-    cat > $out/fcitx5-config/conf/classicui.conf << EOF
+    cat > $out/conf/classicui.conf << EOF
     Vertical Candidate List=False
     PerScreenDPI=True
     Font="JetBrainsMono Nerd Font 12"
@@ -17,7 +17,7 @@ let
     EOF
 
     # 创建 profile
-    cat > $out/fcitx5-config/profile << EOF
+    cat > $out/profile << EOF
     [Groups/0]
     Name=Default
     Default Layout=us
@@ -36,7 +36,7 @@ let
     EOF
 
     # 创建 pinyin.conf
-    cat > $out/fcitx5-config/conf/pinyin.conf << EOF
+    cat > $out/conf/pinyin.conf << EOF
     PageSize=9
     ShowPreedit=True
     SpellEnabled=True
@@ -46,7 +46,7 @@ let
     EOF
 
     # 创建 cloudpinyin.conf
-    cat > $out/fcitx5-config/conf/cloudpinyin.conf << EOF
+    cat > $out/conf/cloudpinyin.conf << EOF
     Backend=Baidu
     EOF
   '';
@@ -70,8 +70,8 @@ in
   home.file.".config/fcitx5".source = fcitx5-config;
   home.file.".local/share/fcitx5/themes".source = fcitx5-themes;
 
-    # 自动启动配置
-    xdg.configFile."autostart/fcitx5.desktop".text = ''
+  # 自动启动配置
+  xdg.configFile."autostart/fcitx5.desktop".text = ''
     [Desktop Entry]
     Name=Fcitx 5
     GenericName=Input Method
