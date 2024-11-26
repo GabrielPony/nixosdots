@@ -1,7 +1,9 @@
-{ pkgs, ... }: 
+{ pkgs, config, ... }:
+let hostname = config.var.hostname;
+in
 {
   networking = {
-    hostName = "nixos";
+    hostName = "${hostname}";
     networkmanager.enable = true;
     defaultGateway = "192.168.7.3";
     nameservers = [ "114.114.114.114" "8.8.8.8" ];

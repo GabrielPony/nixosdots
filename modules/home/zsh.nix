@@ -1,4 +1,4 @@
-{ hostname, config, pkgs, host, lib,...}:
+{ hostname, pkgs, host, lib,...}:
 let
   zsh-config = pkgs.callPackage ./../../pkgs/custom/zsh.nix {};
 in

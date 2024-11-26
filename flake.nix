@@ -2,24 +2,30 @@
   description = "gabriel's nixos configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nur.url = "github:nix-community/NUR";
-  
-    hypr-contrib.url = "github:hyprwm/contrib";
-    hyprpicker.url = "github:hyprwm/hyprpicker";
-  
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-  
-    nix-gaming.url = "github:fufexan/nix-gaming";
-  
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
+    nixy-wallpapers = {
+      url = "github:anotherhadi/nixy-wallpapers";
+      flake = false;
     };
 
     catppuccin-bat = {
@@ -34,42 +40,54 @@
       url = "github:catppuccin/starship";
       flake = false;
     };
+
+    stylix.url = "github:danth/stylix";
+    hypr-contrib.url = "github:hyprwm/contrib";
+    hyprpicker.url = "github:hyprwm/hyprpicker";
+    hyprpolkitagent.url = "github:hyprwm/hyprpolkitagent";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+    pia = {
+      url = "github:Fuwn/pia.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur.url = "github:nix-community/NUR";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+    nix-gaming.url = "github:fufexan/nix-gaming";
+
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    spicetify-nix.url = "github:gerg-l/spicetify-nix";
-    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, self, ...} @ inputs:
-  let
-    username = "gabriel";
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    lib = nixpkgs.lib;
-  in
-  {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ (import ./hosts/desktop) ];
-        specialArgs = { host="desktop"; inherit self inputs username lib ; };
-      };
-      laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ (import ./hosts/laptop) ];
-        specialArgs = { host="laptop"; inherit self inputs username lib ; };
-      };
-      wsl = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ (import ./hosts/wsl) ];
-        specialArgs = { host="wsl"; inherit self inputs username lib ; };
+  outputs = { nixpkgs, self, ... } @ inputs:
+    let
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+    in
+    {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/desktop) ];
+          specialArgs = { host = "desktop"; inherit self inputs lib; };
+        };
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/laptop) ];
+          specialArgs = { host = "laptop"; inherit self inputs lib; };
+        };
+        wsl = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/wsl) ];
+          specialArgs = { host = "wsl"; inherit self inputs lib; };
+        };
       };
     };
-  };
 }

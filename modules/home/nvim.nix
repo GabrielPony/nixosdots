@@ -1,7 +1,6 @@
-{ config, pkgs, lib, ... }:
-
+{ uconfig, pkgs, lib,... }:
 let
-  nvim-config = pkgs.callPackage ./../../pkgs/custom/nvim.nix { };
+  nvim-config = pkgs.callPackage ./../../pkgs/custom/nvim.nix { inherit uconfig; };
 in
 {
   programs.neovim = {

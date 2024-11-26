@@ -1,4 +1,7 @@
-{ pkgs, inputs, nixpkgs, self, username, host, ... }: 
+{ pkgs, inputs, nixpkgs, self, config, host, ... }:
+let
+  username = config.var.username;
+in
 {
   networking = {
     interfaces.enp2s0.useDHCP = true;
@@ -12,9 +15,9 @@
     }];
   };
 
-  home-manager.users.${username} = {
+  home-manager.users."${username}" = {
     wayland.windowManager.hyprland.settings.monitor = [
-        "eDP-1, 2880x1800@90,     0x0, 1"
+      "eDP-1, 2880x1800@90,     0x0, 1"
     ];
   };
 

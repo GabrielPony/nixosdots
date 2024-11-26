@@ -1,4 +1,7 @@
-{ pkgs, inputs, nixpkgs, self, username, host, ... }:
+{ pkgs, inputs, nixpkgs, self, config, host, ... }:
+let
+  username = config.var.username;
+in
 {
   networking = {
     interfaces.eno1.ipv4.addresses = [{
@@ -9,8 +12,8 @@
 
   home-manager.users.${username} = {
     wayland.windowManager.hyprland.settings.monitor = [
-        "DP-3, 3840x2160@60,     0x0, 1"
-        "DP-2, 1920x1080@239.99, 3840x0, 1"
+      "DP-3, 3840x2160@60,     0x0, 1"
+      "DP-2, 1920x1080@239.99, 3840x0, 1"
     ];
   };
 

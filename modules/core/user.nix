@@ -1,5 +1,9 @@
-{ pkgs, inputs, username, host, ... }:
+{ pkgs, inputs, config, host, ... }:
 let
+  uconfig = config.user;
+  username = config.var.username;
+  password = config.var.password;
+  version = config.var.version;
   hostConfig = {
     "desktop" = [ ./../home/default.desktop.nix ];
     "laptop" = [ ./../home/default.desktop.nix ];
@@ -11,7 +15,7 @@ in
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "gabriel" ]; # 确保你的用户在这里
+      trusted-users = [ "root" "${username}" ];
       allowed-users = [ "@wheel" "@nixbld" ];
       substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
     };
@@ -21,12 +25,12 @@ in
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username host; };
+    extraSpecialArgs = { inherit inputs uconfig host; };
     users.${username} = {
       imports = hostConfig;
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
-      home.stateVersion = "24.05";
+      home.stateVersion = "${version}";
       programs.home-manager.enable = true;
     };
   };
@@ -38,7 +42,7 @@ in
   users.users.${username} = {
     uid = 1000;
     isNormalUser = true;
-    initialPassword = "1111";
+    initialPassword = "${password}";
     home = "/home/${username}";
     description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];

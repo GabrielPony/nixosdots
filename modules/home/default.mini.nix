@@ -1,4 +1,11 @@
-{ inputs, username, host, pkgs, ... }: {
+{ inputs, uconfig, host, pkgs, ... }: {
+imports = [
+  ./tmux.nix
+  ./nvim.nix                   # neovim editor
+  ./btop.nix                   # resouces monitor
+  ./git.nix                    # version control
+  ./zsh.nix                    # shell
+];
   home.packages = (with pkgs; [
     dos2unix
     gcc
@@ -9,10 +16,4 @@
     lua
     clang-tools
   ]);
-  imports =
-    [ (import ./tmux.nix) ]
-    ++ [ (import ./nvim.nix) ]                      # neovim editor
-    ++ [ (import ./btop.nix) ]                      # resouces monitor
-    ++ [ (import ./git.nix) ]                       # version control
-    ++ [ (import ./zsh.nix) ]; # shell
 }

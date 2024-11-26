@@ -1,4 +1,9 @@
-{ self, pkgs, lib, inputs, ...}: 
+{ config, self, pkgs, lib, inputs, ...}:
+let
+  timeZone = config.var.timeZone;
+  defaultLocale = config.var.defaultLocale;
+  version = config.var.version;
+in
 {
   # imports = [ inputs.nix-gaming.nixosModules.default ];
   nix = {
@@ -26,9 +31,9 @@
     vim
   ];
 
-  time.timeZone = "Asian/Shanghai";
+  time.timeZone = "${timeZone}";
   time.hardwareClockInLocalTime = true;
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "${defaultLocale}";
   nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "24.05";
+  system.stateVersion = "${version}";
 }

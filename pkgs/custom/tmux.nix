@@ -1,5 +1,10 @@
-{ stdenv, fetchFromGitHub, ... }:
-
+{ stdenv, uconfig, fetchFromGitHub, ... }:
+let
+repo-owner = uconfig.custom.repo.owner;
+repo-name = uconfig.custom.repo.repo;
+repo-rev = uconfig.custom.repo.rev;
+repo-sha256 = uconfig.custom.repo.sha256;
+in
 stdenv.mkDerivation rec {
   pname = "tmux-config";
   version = "1.0.0";
@@ -12,10 +17,10 @@ stdenv.mkDerivation rec {
   };
 
   tmux-src = fetchFromGitHub {
-    owner = "GabrielPony"; # 替换为你的 GitHub 用户名
-    repo = "dotfiles"; # 替换为你的仓库名
-    rev = "main"; # 可以是分支名、tag 或 commit hash
-    sha256 = "sha256-K9A443WOXdonzSLxXYwztrVJA3kOtPirMMuS4MzFtP0=";
+    owner = "${repo-owner}";
+    repo = "${repo-name}";
+    rev = "${repo-rev}";
+    sha256 = "${repo-sha256}";
   };
 
   src = ohmytmux-src;

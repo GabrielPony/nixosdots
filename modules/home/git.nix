@@ -1,10 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, uconfig, ... }:
+let
+  inherit (uconfig.git) username email;
+in
 {
   programs.git = {
     enable = true;
 
-    userName = "GabrielPony";
-    userEmail = "aoengo@outlook.com";
+    userName = username;
+    userEmail = email;
 
     extraConfig = {
       core = {
