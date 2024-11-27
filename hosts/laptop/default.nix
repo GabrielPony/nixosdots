@@ -1,8 +1,8 @@
-{ inputs, lib, system, ... }:
+{ pkgs, inputs, lib, ... }:
 {
   imports = [
     inputs.stylix.nixosModules.stylix
-    inputs.pia.nixosModules."x86_64-linux".default
+    inputs.pia.nixosModules.${pkgs.system}.default
     ./../../nixos/variables.nix
     ./addon-configuration.nix
     ./hardware-configuration.nix

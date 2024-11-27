@@ -70,23 +70,27 @@
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true; # 如果需要的话
+      };
     in
     {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ (import ./hosts/desktop) ];
-          specialArgs = { host = "desktop"; inherit self inputs lib; };
+          specialArgs = { host = "desktop"; inherit self inputs lib pkgs; };
         };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ (import ./hosts/laptop) ];
-          specialArgs = { host = "laptop"; inherit self inputs lib; };
+          specialArgs = { host = "laptop"; inherit self inputs lib pkgs; };
         };
         wsl = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ (import ./hosts/wsl) ];
-          specialArgs = { host = "wsl"; inherit self inputs lib; };
+          specialArgs = { host = "wsl"; inherit self inputs lib pkgs; };
         };
       };
     };

@@ -1,7 +1,7 @@
 { stdenv, uconfig, fetchFromGitHub, ... }:
 let
 repo-owner = uconfig.custom.repo.owner;
-repo-name = uconfig.custom.repo.repo;
+repo-name = uconfig.custom.repo.name;
 repo-rev = uconfig.custom.repo.rev;
 repo-sha256 = uconfig.custom.repo.sha256;
 in

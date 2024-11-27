@@ -6,7 +6,7 @@
 
     # system = "x86_64-linux";
     hostname = "nixos";
-    username = "gabriel";
+    username = "kony";
     password = "1111";
 
     # The path of the nixos configuration directory
@@ -33,7 +33,7 @@
         owner = "GabrielPony"; # 替换为你的 GitHub 用户名
         name = "dotfiles"; # 替换为你的仓库名
         rev = "main"; # 可以是分支名、tag 或 commit hash
-        sha256 = "sha256-K9A443WOXdonzSLxXYwztrVJA3kOtPirMMuS4MzFtP0=";
+        sha256 = "sha256-2SO+mrGg1zm0fKnCrzfYCGu/7hNbOWx4FvPTwPnVz14=";
       };
     };
   };

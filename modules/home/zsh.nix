@@ -1,6 +1,6 @@
-{ hostname, pkgs, host, lib,...}:
+{ uconfig, pkgs, host, lib, ... }:
 let
-  zsh-config = pkgs.callPackage ./../../pkgs/custom/zsh.nix {};
+  zsh-config = pkgs.callPackage ./../../pkgs/custom/zsh.nix { inherit uconfig; };
 in
 {
   programs.fzf.enable = true;
@@ -15,9 +15,9 @@ in
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "fzf"];
+      plugins = [ "git" "fzf" ];
       custom = "$HOME/.config/.oh-my-zsh/custom"; # 自定义目录
-      theme ="powerlevel10k/powerlevel10k";
+      theme = "powerlevel10k/powerlevel10k";
     };
     initExtra = ''
       # This will add to .zshrc
