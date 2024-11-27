@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
   ohmytmux-src = fetchFromGitHub {
     owner = "gpakosz";
     repo = ".tmux";
-    rev = "master"; # 您也可以指定具体的 commit hash
-    sha256 = "sha256-4PQQyNREi4LHDKbj0nn1pcVJC53Efxt6tJyaTKtt9us=";
+    rev = "4cb811769abe8a2398c7c68c8e9f00e87bad4035"; # 您也可以指定具体的 commit hash
+    sha256 = "sha256-e7Ymv3DD7FY2i7ij9woZ6o/edJGbEfm2K8wrD2H43Yk=";
   };
 
   tmux-src = fetchFromGitHub {

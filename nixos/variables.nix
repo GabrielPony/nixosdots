@@ -6,7 +6,7 @@
 
     # system = "x86_64-linux";
     hostname = "nixos";
-    username = "kony";
+    username = "gabriel";
     password = "1111";
 
     # The path of the nixos configuration directory
