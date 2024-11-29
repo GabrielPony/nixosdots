@@ -4,24 +4,32 @@
   config.var = {
     version = "24.05";
 
-    # system = "x86_64-linux";
+    hsystem = "x86_64-linux";
     hostname = "nixos";
     username = "gabriel";
     password = "1111";
 
+
     # The path of the nixos configuration directory
     configDirectory = "/home/" + config.var.username + "/.config/nixos";
-    # keyboardLayout = "fr";
-    location = "Paris";
-    timeZone = "Asian/Shanghai";
+    keyboardLayout = "us";
+    location = "Beijing";
+    timeZone = "Asia/Shanghai";
     defaultLocale = "en_US.UTF-8";
-    extraLocale = "fr_FR.UTF-8";
+    extraLocale = "zh_CN.UTF-8";
 
     autoUpgrade = false;
     autoGarbageCollector = false;
 
+    network = {
+      gateway = "192.168.7.3";
+      nameservers = [ "114.114.114.114" "8.8.8.8" ];
+      tcpPorts = [ 22 80 443 59010 59011 ];
+      udpPorts = [ 59010 59011 ];
+    };
+
     # Choose your theme variables here
-    theme = import ../../themes/var/pinky.nix;
+    # theme = import ../../themes/var/pinky.nix;
   };
   config.user = {
     git = {

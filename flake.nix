@@ -2,6 +2,7 @@
   description = "gabriel's nixos configuration";
 
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -40,7 +41,7 @@
       url = "github:catppuccin/starship";
       flake = false;
     };
-
+    catppuccin-nix.url = "github:catppuccin/nix";
     stylix.url = "github:danth/stylix";
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
@@ -51,12 +52,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
-    pia = {
-      url = "github:Fuwn/pia.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nur.url = "github:nix-community/NUR";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     nix-gaming.url = "github:fufexan/nix-gaming";
 
@@ -64,6 +60,7 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    anyrun.url = "github:anyrun-org/anyrun";
   };
 
   outputs = { nixpkgs, self, ... } @ inputs:
@@ -72,6 +69,7 @@
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
         inherit system;
+        overlays = [ inputs.nur.overlay];
         config.allowUnfree = true; # 如果需要的话
       };
     in
@@ -79,7 +77,9 @@
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ (import ./hosts/desktop) ];
+          modules = [
+            (import ./hosts/desktop)
+          ];
           specialArgs = { host = "desktop"; inherit self inputs lib pkgs; };
         };
         laptop = nixpkgs.lib.nixosSystem {
