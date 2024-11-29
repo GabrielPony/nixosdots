@@ -1,9 +1,10 @@
-{ stdenv, uconfig, fetchFromGitHub, ... }:
+{ stdenv, config, fetchFromGitHub, ... }:
 let
-repo-owner = uconfig.custom.repo.owner;
-repo-name = uconfig.custom.repo.name;
-repo-rev = uconfig.custom.repo.rev;
-repo-sha256 = uconfig.custom.repo.sha256;
+repo = config.user.custom.repo;
+repo-owner = repo.owner;
+repo-name = repo.name;
+repo-rev = repo.rev;
+repo-sha256 = repo.sha256;
 in
 stdenv.mkDerivation rec {
   pname = "tmux-config";
