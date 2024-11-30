@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   home.packages = [ pkgs.hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = ''
@@ -29,7 +29,7 @@
     # BACKGROUND
     background {
       monitor =
-      path = ${../../../wallpapers/otherWallpaper/others/cat-leaves.png}
+      path = ${inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png"}
       color = $base
       blur_passes = 0
     }

@@ -6,7 +6,7 @@
     ../nixos/variables.nix
 
     # themes
-    # ./themes/stylix/default.nix
+    ./themes/stylix/home-stylix.nix
     # Programs
     ./programs/packages.nix
     ./programs/kitty.nix

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{pkgs ,...}:
 {
   stylix = {
     enable = true;
@@ -36,14 +36,11 @@
       desktop = 1.0;
       popups = 1.0;
     };
-    polarity = "dark";
-    targets = {
-      grub.enable = true;
-      gnome.enable = true;
-      gtk.enable = true;
-      nixos-icons.enable = true;
-    };
 
-    image = inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png";
+    targets = {
+      gedit.enable = true;
+      firefox.enable = true;
+      gtk.enable = true;
+    };
   };
 }
