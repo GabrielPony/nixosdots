@@ -1,51 +1,34 @@
-{ inputs, pkgs, ... }:
+{ pkgs, config, ... }:
 {
-  imports = [ inputs.catppuccin-nix.homeManagerModules.catppuccin ];
   fonts.fontconfig.enable = true;
   home.packages = [
     pkgs.nerdfonts
-    (pkgs.nerdfonts.override { fonts = [ "Monaspace" "Noto" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" "Noto" ]; })
     pkgs.twemoji-color-font
     pkgs.noto-fonts-emoji
   ];
 
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk2";
-    style.name = "gtk2";
-  };
-
   gtk = {
     enable = true;
-    # font = { name = config.stylix.fonts.serif.name; };
-
-    # catppuccin = {
-    #   enable = true;
-    #   flavor = "mocha";
-    #   accent = "pink";
-    #   size = "standard";
-    #   tweaks = [ "normal" ];
+    # font = {
+    #   name = "JetBrainsMono Nerd Font";
+    #   size = 11;
     # };
-
     iconTheme = {
-      name = "Papirus-Light";
-      package = pkgs.catppuccin-papirus-folders;
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "lavender";
+      };
     };
-
-    # theme = {
-    #   name = "Catppuccin-Mocha-Standard-Lavender-Dark";
-    #   package = pkgs.custom.catppuccin-gtk;
-    # };
-
-    # cursorTheme = {
-    #   name = "Catppuccin-Latte-Lavender-Cursors";
-    #   package = pkgs.catppuccin-cursors;
-    # };
-    #
-    gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
-
-    gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
-
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+      # package = pkgs.catppuccin-gtk.override {
+      #   accents = [ "lavender" ]; # 与你的图标主题accent保持一致
+      #   variant = "mocha"; # 使用 mocha 变体
+      # };
+    };
   };
-}
 
+}

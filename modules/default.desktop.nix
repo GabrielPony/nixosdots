@@ -16,10 +16,11 @@
     ./programs/wechat.nix
     ./programs/discord.nix
     ./programs/gedit.nix
-    ./programs/spicetify.nix
+    # ./programs/spicetify.nix
     ./programs/qutebrowser/qutebrowser.nix
     ./programs/cava.nix
     ./programs/vscodium.nix
+    ./programs/fcitx5.nix
     # ./programs/shell
     # ./programs/fetch
     ./programs/git.nix
@@ -36,13 +37,12 @@
     # ./scripts # All scripts
 
     # System (Desktop environment like stuff)
-    ./system/fuzzel.nix
-    ./system/anyrun.nix
+    ./system/rofi.nix
     ./system/waybar/default.nix
     ./system/hyprland/default.nix
     ./system/scripts/scripts.nix
-    ./system/gtk/gtk.nix
     ./system/swaync/swaync.nix
+    ./system/gtk/gtk.nix
     # ./system/hypridle
     # ./system/hyprlock
     # ./system/hyprpanel
@@ -62,40 +62,6 @@
   home = {
     inherit (config.var) username;
     homeDirectory = "/home/" + config.var.username;
-
-    #   packages = with pkgs; [
-    #     # Apps
-    #     discord # Chat
-    #     bitwarden # Password manager
-    #     vlc # Video player
-    #     blanket # White-noise app
-    #
-    #     # Dev
-    #     go
-    #     nodejs
-    #     python3
-    #     jq
-    #     figlet
-    #     just
-    #
-    #     # Utils
-    #     zip
-    #     unzip
-    #     optipng
-    #     pfetch
-    #     pandoc
-    #     btop
-    #
-    #     # Just cool
-    #     peaclock
-    #     cbonsai
-    #     pipes
-    #     cmatrix
-    #     # cava
-    #
-    #     # Backup
-    #     vscode
-    #   ];
 
     # Import my profile picture, used by the hyprpanel dashboard
     # file.".profile_picture.png" = { source = ./profile_picture.png; };

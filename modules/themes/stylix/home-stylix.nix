@@ -38,9 +38,11 @@
     };
 
     targets = {
+      hyprpaper.enable = true;
+      hyprlock.enable = true;
       gedit.enable = true;
       firefox.enable = true;
-      gtk.enable = true;
+      gtk.enable = false;
     };
   };
 }

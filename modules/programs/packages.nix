@@ -33,8 +33,6 @@ in
     prismlauncher # minecraft launcher
     ripgrep # grep replacement
     soundwireserver # pass audio to android phone
-    tdf # cli pdf viewer
-    todo # cli todo list
     toipe # typing test in the terminal
     valgrind # c memory analyzer
     yazi # terminal file manager
@@ -42,17 +40,15 @@ in
     zenity
     winetricks
     wineWowPackages.wayland
-    yesplaymusic
     qq
     rustdesk-flutter
-    tmux
-    alacritty
     feishu
     usbutils
     meld
     # orca-slicer
     motrix
     minicom
+    spotify
 
     # Emedd
     stlink
