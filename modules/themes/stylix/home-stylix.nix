@@ -42,7 +42,7 @@
       hyprlock.enable = true;
       gedit.enable = true;
       firefox.enable = true;
-      gtk.enable = false;
+      gtk.enable = true;
     };
   };
 }

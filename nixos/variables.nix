@@ -29,7 +29,8 @@
     };
 
     # Choose your theme variables here
-    theme-name = "FlatColor";
+    # theme-name = "FlatColor";
+    theme-name = "adw-gtk3";
     # theme = import ../../themes/var/pinky.nix;
   };
   config.user = {

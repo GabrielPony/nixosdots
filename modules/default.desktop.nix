@@ -42,7 +42,7 @@
     ./system/hyprland/default.nix
     ./system/scripts/scripts.nix
     ./system/swaync/swaync.nix
-    ./system/gtk/gtk.nix
+    # ./system/gtk/gtk.nix
     # ./system/hypridle
     # ./system/hyprlock
     # ./system/hyprpanel

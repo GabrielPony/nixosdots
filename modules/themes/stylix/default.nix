@@ -40,7 +40,7 @@
     targets = {
       grub.enable = true;
       gnome.enable = true;
-      gtk.enable = false;
+      gtk.enable = true;
       nixos-icons.enable = true;
     };
 
