@@ -29,6 +29,7 @@
     };
 
     # Choose your theme variables here
+    theme-name = "FlatColor";
     # theme = import ../../themes/var/pinky.nix;
   };
   config.user = {

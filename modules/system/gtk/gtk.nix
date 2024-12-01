@@ -1,6 +1,7 @@
 # GTK & QT theme configuration
 { config, pkgs, lib, ... }:
 let
+  theme-name = config.var.theme-name;
   accent = "#${config.lib.stylix.colors.base0D}";
   foreground = "#${config.lib.stylix.colors.base05}";
   background = "#${config.lib.stylix.colors.base00}";
@@ -34,7 +35,7 @@ in {
   gtk = {
     enable = true;
 
-    theme = lib.mkForce { name = "FlatColor"; };
+    theme = lib.mkForce { name = "${theme-name}"; };
 
     iconTheme = {
       name = "Papirus-Dark";
@@ -52,14 +53,14 @@ in {
   };
 
   home.file = {
-    ".local/share/themes/FlatColor" = {
+    ".local/share/themes/${theme-name}" = {
       recursive = true;
       source = pkgs.stdenv.mkDerivation {
-        name = "FlatColor";
+        name = "${theme-name}";
 
         src = pkgs.fetchFromGitHub {
           owner = "jasperro";
-          repo = "FlatColor";
+          repo = "${theme-name}";
           rev = "0a56c50e8c5e2ad35f6174c19a00e01b30874074";
           hash = "sha256-P8RnYTk9Z1rCBEEMLTVRrNr5tUM/Pc9dsdMtpHd1Y18=";
         };
@@ -84,7 +85,7 @@ in {
       };
     };
 
-    ".local/share/themes/FlatColor/colors2".text = ''
+    ".local/share/themes/${theme-name}/colors2".text = ''
       bg_color:${background}
       color0:${c0}
       color1:${c1}
@@ -114,7 +115,7 @@ in {
       link_color:${accent}
     '';
 
-    ".local/share/themes/FlatColor/colors3".text = ''
+    ".local/share/themes/${theme-name}/colors3".text = ''
       @define-color color0 ${c0};
       @define-color color1 ${c1};
       @define-color color2 ${c2};
