@@ -48,7 +48,6 @@ in
     # orca-slicer
     motrix
     minicom
-    spotify
 
     # Emedd
     stlink

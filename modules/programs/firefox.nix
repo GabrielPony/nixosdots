@@ -21,6 +21,7 @@ let
           {
             "name": "Bookmarks",
             "links": [
+              {"title": "Monica", "url": "https://monica.im", "icon": "󰻞"},
               {"title": "MyNixOs", "url": "https://mynixos.com", "icon": "󱄅"},
               {"title": "Github", "url": "https://github.com", "icon": ""},
               {"title": "Proton", "url": "https://mail.proton.me/u/0/inbox", "icon": ""},
@@ -114,11 +115,12 @@ in
         "signon.rememberSignons" = false;
 
         "browser.startup.homepage" = "${homepage}/build/index.html";
-        "browser.search.region" = "FR";
+        # "browser.search.region" = "FR";
         "browser.search.isUS" = false;
-        "distribution.searchplugins.defaultLocale" = "fr-FR";
-        "general.useragent.locale" = "fr-FR";
+        # "distribution.searchplugins.defaultLocale" = "fr-FR";
+        # "general.useragent.locale" = "fr-FR";
         "browser.bookmarks.showMobileBookmarks" = true;
+        # "browser.newtab.url" = "${homepage}/build/index.html";
         "browser.newtabpage.pinned" = [{
           title = "Homepage";
           url = "${homepage}/build/index.html";

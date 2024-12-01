@@ -16,7 +16,7 @@
     ./programs/wechat.nix
     ./programs/discord.nix
     ./programs/gedit.nix
-    # ./programs/spicetify.nix
+    ./programs/spicetify.nix
     ./programs/qutebrowser/qutebrowser.nix
     ./programs/cava.nix
     ./programs/vscodium.nix
