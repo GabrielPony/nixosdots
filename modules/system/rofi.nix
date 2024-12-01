@@ -1,21 +1,20 @@
-{ pkgs, ... }:
+{ pkgs,config, ... }:
 {
   home.packages = (with pkgs; [ rofi-wayland ]);
 
-  xdg.configFile."rofi/theme.rasi".text = ''
-    * {
-      bg-col: #1D2021;
-      bg-col-light: #282828;
-      border-col: #A89984;
-      selected-col: #3C3836;
-      green: #98971A;
-      fg-col: #FBF1C7;
-      fg-col2: #EBDBB2;
-      grey: #BDAE93;
-      highlight: @green;
-    }
-  '';
-
+xdg.configFile."rofi/theme.rasi".text = ''
+  * {
+    bg-col: #${config.lib.stylix.colors.base00};      /* crust/surface0 */
+    bg-col-light: #${config.lib.stylix.colors.base01}; /* mantle */
+    border-col: #${config.lib.stylix.colors.base04};   /* subtext0 */
+    selected-col: #${config.lib.stylix.colors.base02}; /* surface1 */
+    green: #${config.lib.stylix.colors.base0B};        /* green */
+    fg-col: #${config.lib.stylix.colors.base05};       /* text */
+    fg-col2: #${config.lib.stylix.colors.base04};      /* subtext0 */
+    grey: #${config.lib.stylix.colors.base04};         /* subtext0 */
+    highlight: @green;
+  }
+'';
   xdg.configFile."rofi/config.rasi".text = ''
     configuration{
       modi: "run,drun,window";
