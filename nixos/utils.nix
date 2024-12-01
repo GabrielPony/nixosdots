@@ -13,10 +13,13 @@ in
       enable = true;
       user = "${username}";
     };
-    gnome.gnome-keyring.enable = true;
+    libinput = {
+      enable = true;
+      # mouse = {
+      #   accelProfile = "flat";
+      # };
+    };
   };
-
-
   environment.variables = {
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
@@ -30,16 +33,16 @@ in
 
   systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 
-  services.libinput.enable = true;
+  # services.libinput.enable = true;
   programs.dconf.enable = true;
-  services = {
-    dbus.enable = true;
-    gvfs.enable = true;
-    upower.enable = true;
-    power-profiles-daemon.enable = true;
-    udisks2.enable = true;
-  };
-
+  # services = {
+  #   dbus.enable = true;
+  #   gvfs.enable = true;
+  #   upower.enable = true;
+  #   power-profiles-daemon.enable = true;
+  #   udisks2.enable = true;
+  # };
+  #
   # Faster rebuilding
   documentation = {
     enable = true;
@@ -67,3 +70,52 @@ in
     HandlePowerKey=ignore
   '';
 }
+
+# programs.uwsm = {
+#   enable = true;
+#   waylandCompositors = {
+#     hyprland = {
+#       binPath = "${pkgs.hyprland}/bin/Hyprland";
+#       prettyName = "Hyprland";
+#     };
+#   };
+# };
+# services = {
+#  xserver = {
+#    enable = true;
+#    xkb.layout = "us,fr";
+#    displayManager = {
+#      gdm.enable = false;
+#      lightdm.enable = false;
+#      sddm.enable = false;
+#      autoLogin.enable = true;
+#      autoLogin.user = username;
+#    };
+#  };
+# services = {
+#   xserver = {
+#     enable = true;
+#     xkb.layout = "us,fr";
+#     displayManager = {
+#       gdm.enable = false;
+#       lightdm.enable = false;
+#       sddm.enable = false;
+#     };
+#   };
+#   displayManager.autoLogin = {
+#     enable = true;
+#     user = username;
+#   };
+#   greetd = {
+#     enable = true;
+#     settings = {
+#       default_session = {
+#         command = "${pkgs.uwsm}/bin/uwsm start hyprland.desktop";
+#         user = "gabriel"; # 替换成你的用户名
+#       };
+#     };
+#   };
+#
+#   gnome.gnome-keyring.enable = true;
+# };
+#

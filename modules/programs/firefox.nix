@@ -88,8 +88,8 @@ in
       OverrideFirstRunPage = "";
       OverridePostUpdatePage = "";
       DontCheckDefaultBrowser = true;
-      DisableFirefoxAccounts = true;
-      DisableAccounts = true;
+      # DisableFirefoxAccounts = true;
+      # DisableAccounts = true;
       "AutofillAddressEnabled" = false;
       "AutofillCreditCardEnabled" = false;
       Preferences = {

@@ -37,7 +37,6 @@ in
       if [ -n "$NVIM" ]; then
         PROMPT='$ '
       fi
-
     '';
 
     # initExtraFirst = ''

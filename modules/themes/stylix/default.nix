@@ -36,7 +36,7 @@
       desktop = 1.0;
       popups = 1.0;
     };
-    # polarity = "dark";
+    polarity = "dark";
     targets = {
       grub.enable = true;
       gnome.enable = true;
