@@ -143,7 +143,7 @@
         "$mainMod, Space, centerwindow,"
         "$mainMod, Space, togglefloating,"
         "$mainMod, Space, resizeactive, exact 1280 720"
-        "$mainMod, A, exec, fuzzel"
+        "$mainMod, A, exec, rofi -show drun || pkill rofi"
         "$mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
         "$mainMod, Escape, exec, hyprlock"
