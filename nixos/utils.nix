@@ -1,14 +1,21 @@
 { pkgs, config, ... }:
 let
   username = config.var.username;
-in {
+in
+{
   services = {
     xserver = {
       enable = true;
-      xkb.variant = "";
+      xkb.layout = "us,fr";
+    };
+
+    displayManager.autoLogin = {
+      enable = true;
+      user = "${username}";
     };
     gnome.gnome-keyring.enable = true;
   };
+
 
   environment.variables = {
     XDG_DATA_HOME = "$HOME/.local/share";
