@@ -4,12 +4,16 @@
     enable = true;
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    # base16Scheme = themes.jabuti;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
       size = 20;
     };
+    # iconTheme = {
+    #   package = pkgs.papirus-icon-theme.override { color = "indigo"; };
+    #   dark = "Papirus-Dark"; # used
+    #   light = "Papirus-Light"; # unused
+    # };
     fonts = {
       monospace = {
         package = pkgs.nerdfonts.override { fonts = [ "Monaspace" ]; };
