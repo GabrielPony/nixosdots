@@ -49,6 +49,7 @@ xdg.configFile."rofi/theme.rasi".text = ''
       border: 2px;
       border-color: @border-col;
       background-color: @bg-col;
+      border-radius: 12px;
     }
 
     mainbox {
