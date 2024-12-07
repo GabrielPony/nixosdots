@@ -26,7 +26,6 @@ in
     jdk17 # java
     lazygit
     libreoffice
-    nautilus
     nitch # systhem fetch util
     nix-prefetch-github
     pipes
@@ -48,6 +47,7 @@ in
     # orca-slicer
     motrix
     telegram-desktop
+    xfce.thunar
 
     # Emedd
     stlink
