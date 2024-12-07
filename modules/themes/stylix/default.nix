@@ -15,17 +15,36 @@
     #   light = "Papirus-Light"; # unused
     # };
     fonts = {
+      # monospace = {
+      #   package = pkgs.nerdfonts.override { fonts = [ "Monaspace" ]; };
+      #   name = "Monospice Nerd Font";
+      # };
+      # sansSerif = {
+      #   package = pkgs.dejavu_fonts;
+      #   name = "DejaVu Sans";
+      # };
+      # serif = {
+      #   package = pkgs.dejavu_fonts;
+      #   name = "DejaVu Serif";
+      # };
+      # sizes = {
+      #   applications = 11;
+      #   terminal = 12;
+      #   desktop = 11;
+      #   popups = 11;
+      # };
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "Monaspace" ]; };
-        name = "Monospice Nerd Font";
+        package = pkgs.nerdfonts.override { fonts = [ "Monaspace" ]; }; # 改为 MonaspiceNerd
+        name = "Monospice Nerd Font"; # 使用 Neon 变体
       };
       sansSerif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Sans";
+        # 改为更现代的字体组合
+        package = pkgs.source-sans; # 或保持 dejavu_fonts
+        name = "Source Sans"; # 或保持 "DejaVu Sans"
       };
       serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
+        package = pkgs.source-serif; # 或保持 dejavu_fonts
+        name = "Source Serif"; # 或保持 "DejaVu Serif"
       };
       sizes = {
         applications = 11;

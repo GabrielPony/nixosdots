@@ -2,33 +2,48 @@
 
   fonts = {
     packages = with pkgs; [
-      roboto
-      work-sans
-      comic-neue
       source-sans
-      comfortaa
-      inter
-      lato
-      lexend
-      jost
-      dejavu_fonts
+      source-serif
+      source-code-pro
       wqy_zenhei
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-      (nerdfonts.override { fonts = [ "Monaspace" "Noto" ]; })
-      openmoji-color
-      twemoji-color-font
-      inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
+      monaspace
+      (nerdfonts.override { fonts = [ "Monaspace" ]; })
     ];
 
     enableDefaultPackages = false;
 
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Monaspice Nerd Font" "Noto Color Emoji" ];
-        sansSerif = [ "SFProDisplay Nerd Font" "Noto Color Emoji" ];
-        serif = [ "SFProDisplay Nerd Font" "Noto Color Emoji" ];
+        serif = [
+          "Source Serif"
+          "Times New Roman"
+          "Noto Serif"
+          "Noto Serif CJK SC"
+        ];
+
+        sansSerif = [
+          "Arial"
+          "Source Sans"
+          "Noto Sans"
+          "Noto Sans CJK SC"
+        ];
+
+        monospace = [
+          "Monaspace Argon"
+          "MonaspiceAr Nerd Font" # Neon 变体的 Nerd Font 版本
+          # 其他变体的 Nerd Font 版本：
+          # "MonaspiceAr Nerd Font"   # Argon
+          # "MonaspiceXe Nerd Font"   # Xenon
+          # "MonaspiceRn Nerd Font"   # Radon
+          # "MonaspiceKr Nerd Font"   # Krypton
+          "Source Code Pro"
+          "Noto Sans Mono"
+          "Noto Sans Mono CJK SC"
+        ];
+
         emoji = [ "Noto Color Emoji" ];
       };
     };
