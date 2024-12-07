@@ -47,7 +47,7 @@ in
     meld
     # orca-slicer
     motrix
-    minicom
+    telegram-desktop
 
     # Emedd
     stlink
@@ -55,6 +55,8 @@ in
     gcc-arm-embedded-9
     jetbrains.clion
     _stm32cubemx
+    minicom
+    segger-ozone
 
     # C / C++
     gcc
