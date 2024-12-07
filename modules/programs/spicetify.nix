@@ -21,15 +21,12 @@ in {
     #   tab-active = accent;
     # };
     #
-    # enabledExtensions = with spicePkgs.extensions; [
-    #   playlistIcons
-    #   lastfm
-    #   historyShortcut
-    #   hidePodcasts
-    #   adblock
-    #   fullAppDisplay
-    #   shuffle
-    # ];
+    enabledExtensions = with spicePkgs.extensions; [
+      keyboardShortcut
+      shuffle
+      adblock
+      fullAppDisplay
+    ];
   };
 }
 
