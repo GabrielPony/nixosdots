@@ -131,7 +131,7 @@ in
       #
       #   signon.firefoxRelay.feature = "disabled";
       #   signon.generation.enabled = "false";
-      # };
+      };
       # bookmarks = [
       #   {
       #     name = "Homepage";
