@@ -5,9 +5,9 @@
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 20;
+      package = pkgs.nordzy-cursor-theme;
+      name = "Nordzy-cursors-white";
+      size = 22;
     };
     # iconTheme = {
     #   package = pkgs.papirus-icon-theme.override { color = "indigo"; };

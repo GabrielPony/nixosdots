@@ -104,66 +104,66 @@ in
       isDefault = true;
       name = "default";
       settings = {
-        "app.normandy.first_run" = false;
-        "browser.uidensity" = 1;
-        "bookmarks.restore_default_bookmarks" = false;
-
-        "browser.bookmarks.addedImportButton" = false;
-        "browser.toolbars.bookmarks.visibility" = "always";
-        "browser.warnOnQuitShortcut" = false;
-        "datareporting.healthreport.uploadEnabled" = false;
-        "signon.rememberSignons" = false;
+        # "app.normandy.first_run" = false;
+        # "browser.uidensity" = 1;
+        # "bookmarks.restore_default_bookmarks" = false;
+        #
+        # "browser.bookmarks.addedImportButton" = false;
+        # "browser.toolbars.bookmarks.visibility" = "always";
+        # "browser.warnOnQuitShortcut" = false;
+        # "datareporting.healthreport.uploadEnabled" = false;
+        # "signon.rememberSignons" = false;
 
         "browser.startup.homepage" = "${homepage}/build/index.html";
         # "browser.search.region" = "FR";
-        "browser.search.isUS" = false;
+        "browser.search.isUS" = true;
         # "distribution.searchplugins.defaultLocale" = "fr-FR";
         # "general.useragent.locale" = "fr-FR";
-        "browser.bookmarks.showMobileBookmarks" = true;
+        # "browser.bookmarks.showMobileBookmarks" = true;
         # "browser.newtab.url" = "${homepage}/build/index.html";
         "browser.newtabpage.pinned" = [{
           title = "Homepage";
           url = "${homepage}/build/index.html";
         }];
-
-        services.sync.engine.addons = false;
-        services.sync.nextSync = 0;
-
-        signon.firefoxRelay.feature = "disabled";
-        signon.generation.enabled = "false";
-      };
-      bookmarks = [
-        {
-          name = "Homepage";
-          url = "${homepage}/build/index.html";
-        }
-        {
-          name = "wikipedia";
-          tags = [ "wiki" ];
-          keyword = "wiki";
-          url =
-            "https://en.wikipedia.org/wiki/Special:Search?search=%s&amp;go=Go";
-        }
-        {
-          name = "kernel.org";
-          url = "https://www.kernel.org";
-        }
-        {
-          name = "Nix sites";
-          toolbar = true;
-          bookmarks = [
-            {
-              name = "homepage";
-              url = "https://nixos.org/";
-            }
-            {
-              name = "wiki";
-              tags = [ "wiki" "nix" ];
-              url = "https://wiki.nixos.org/";
-            }
-          ];
-        }
-      ];
+      #
+      #   services.sync.engine.addons = false;
+      #   services.sync.nextSync = 0;
+      #
+      #   signon.firefoxRelay.feature = "disabled";
+      #   signon.generation.enabled = "false";
+      # };
+      # bookmarks = [
+      #   {
+      #     name = "Homepage";
+      #     url = "${homepage}/build/index.html";
+      #   }
+      #   {
+      #     name = "wikipedia";
+      #     tags = [ "wiki" ];
+      #     keyword = "wiki";
+      #     url =
+      #       "https://en.wikipedia.org/wiki/Special:Search?search=%s&amp;go=Go";
+      #   }
+      #   {
+      #     name = "kernel.org";
+      #     url = "https://www.kernel.org";
+      #   }
+      #   {
+      #     name = "Nix sites";
+      #     toolbar = true;
+      #     bookmarks = [
+      #       {
+      #         name = "homepage";
+      #         url = "https://nixos.org/";
+      #       }
+      #       {
+      #         name = "wiki";
+      #         tags = [ "wiki" "nix" ];
+      #         url = "https://wiki.nixos.org/";
+      #       }
+      #     ];
+      #   }
+      # ];
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         privacy-badger
         ublock-origin

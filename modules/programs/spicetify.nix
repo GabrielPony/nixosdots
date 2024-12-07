@@ -8,7 +8,6 @@ in {
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [ "spotify" ];
 
-  stylix.targets.spicetify.enable = true;
 
   programs.spicetify = {
     enable = true;

@@ -11,8 +11,8 @@ let
     Vertical Candidate List=False
     PerScreenDPI=True
     Font="JetBrainsMono Nerd Font 12"
-    Theme=catppuccin-macchiato
-    DarkTheme=catppuccin-macchiato
+    Theme=catppuccin-mocha
+    DarkTheme=catppuccin-mocha
     FontDPI=120
     EOF
 
