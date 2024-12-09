@@ -29,10 +29,10 @@
         calendar = {
           format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
         };
-        format = "  {:%H:%M}";
+        format = "   {:%H:%M}";
         tooltip= "true";
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= "  {:%d/%m}";
+        format-alt= "   {:%d/%m}";
     };
     "hyprland/workspaces"= {
         active-only= false;
@@ -50,23 +50,23 @@
         };
     };
     memory= {
-        format= "󰟜 {}%";
-        format-alt= "󰟜 {used} GiB"; # 
+        format= "󰟜  {}%";
+        format-alt= "󰟜  {used} GiB"; # 
         interval= 2;
     };
     cpu= {
-        format= "  {usage}%";
-        format-alt= "  {avg_frequency} GHz";
+        format= "   {usage}%";
+        format-alt= "   {avg_frequency} GHz";
         interval= 2;
     };
     disk = {
         # path = "/";
-        format = "󰋊 {percentage_used}%";
+        format = "󰋊  {percentage_used}%";
         interval= 60;
     };
     network = {
-        format-wifi = "  {signalStrength}%";
-        format-ethernet = "󰀂 ";
+        format-wifi = "   {signalStrength}%";
+        format-ethernet = "󰀂  ";
         tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
         format-linked = "{ifname} (No IP)";
         format-disconnected = "󰖪 ";
@@ -76,8 +76,8 @@
         spacing= 8;
     };
     pulseaudio= {
-        format= "{icon} {volume}%";
-        format-muted= "  {volume}%";
+        format= "{icon}  {volume}%";
+        format-muted= "   {volume}%";
         format-icons= {
             default= [" "];
         };
@@ -87,8 +87,8 @@
     battery = {
         format = "{icon} {capacity}%";
         format-icons = [" " " " " " " " " "];
-        format-charging = " {capacity}%";
-        format-full = " {capacity}%";
+        format-charging = "  {capacity}%";
+        format-full = "  {capacity}%";
         format-warning = " {capacity}%";
         interval = 5;
         states = {

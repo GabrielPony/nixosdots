@@ -48,6 +48,7 @@ in
     motrix
     telegram-desktop
     xfce.thunar
+    todesk
 
     # Emedd
     stlink
