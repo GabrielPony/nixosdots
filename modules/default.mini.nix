@@ -1,9 +1,35 @@
-{ inputs, nixpkgs, self, config, host, ...}:
-{
-  imports =
-       [ (import ./program.nix) ]
-    ++ [ (import ./services.nix) ]
-    ++ [ (import ./system.nix) ]
-    ++ [ (import ./security.nix) ]
-    ++ [ (import ./user.nix) ];
+{ pkgs, config, inputs,... }: {
+
+  _module.args = { inherit inputs; };
+
+  imports = [
+    ../nixos/variables.nix
+
+    # themes
+    ./themes/stylix/home-stylix.nix
+    # Programs
+    ./programs/packages.mini.nix
+    ./programs/kitty.nix
+    ./programs/tmux.nix
+    ./programs/nvim.nix
+    ./programs/zsh.nix
+    ./programs/gedit.nix
+    ./programs/vscodium.nix
+    ./programs/git.nix
+    ./programs/thunar.nix
+    ./programs/lazygit.nix
+  ];
+
+  home = {
+    inherit (config.var) username;
+    homeDirectory = "/home/" + config.var.username;
+
+    # Import my profile picture, used by the hyprpanel dashboard
+    # file.".profile_picture.png" = { source = ./profile_picture.png; };
+
+    # Don't touch this
+    stateVersion = "24.05";
+  };
+
+  programs.home-manager.enable = true;
 }
