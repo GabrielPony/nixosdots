@@ -57,7 +57,6 @@ in
     jetbrains.clion
     _stm32cubemx
     minicom
-    segger-ozone
 
     # C / C++
     gcc

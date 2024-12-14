@@ -21,6 +21,7 @@
     ./programs/cava.nix
     ./programs/vscodium.nix
     ./programs/fcitx5.nix
+    ./programs/ozone.nix
     # ./programs/shell
     # ./programs/fetch
     ./programs/git.nix
