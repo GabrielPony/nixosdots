@@ -17,7 +17,7 @@ let
     name = "segger-ozone";
     paths = [ pkgs.segger-ozone ];
     postBuild = ''
-      rm $out/share/applications/segger-ozone.desktop
+      mkdir -p $out/share/applications
       cp ${ozoneDesktop}/share/applications/* $out/share/applications/
     '';
   };
