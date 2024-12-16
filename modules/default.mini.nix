@@ -1,32 +1,35 @@
-{ config, inputs, ... }: {
+{ pkgs, config, inputs,... }: {
+
+  _module.args = { inherit inputs; };
+
   imports = [
-    # modules
-    inputs.home-manager.nixosModules.home-manager
-    inputs.nixos-wsl.nixosModules.wsl
-    inputs.stylix.nixosModules.stylix
-    inputs.nur.nixosModules.nur
-    ./addon-configuration.nix
-    ./../../nixos/variables.nix
+    ../nixos/variables.nix
 
-    # nixos
-    ../../nixos/users.nix
-    ../../nixos/services.nix
-    ../../nixos/home-manager.nix
-    ../../nixos/nix.nix
-    ../../nixos/security.nix
-    ../../nixos/timezone.nix
-    ../../nixos/variables-config.nix
-    ../../nixos/virtualization.nix
+    # themes
+    ./themes/stylix/home-stylix.nix
+    # Programs
+    ./programs/packages.mini.nix
+    ./programs/kitty.nix
+    ./programs/tmux.nix
+    ./programs/nvim.nix
+    ./programs/zsh.nix
+    ./programs/gedit.nix
+    ./programs/vscodium.nix
+    ./programs/git.nix
+    ./programs/thunar.nix
+    ./programs/lazygit.nix
+  ];
 
-    # Choose your theme here
-    ../../modules/themes/stylix/default.nix
-    ];
+  home = {
+    inherit (config.var) username;
+    homeDirectory = "/home/" + config.var.username;
 
+    # Import my profile picture, used by the hyprpanel dashboard
+    # file.".profile_picture.png" = { source = ./profile_picture.png; };
 
-  home-manager.users."${config.var.username}" = import ../../modules/default.mini.nix;
+    # Don't touch this
+    stateVersion = "24.05";
+  };
 
-  # Don't touch this
-  # nix.nixPath = lib.mkForce ["/etc/nix/inputs"];
-  system.stateVersion = "24.05";
-  powerManagement.cpuFreqGovernor = "performance";
+  programs.home-manager.enable = true;
 }
