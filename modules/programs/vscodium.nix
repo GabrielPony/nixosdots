@@ -2,7 +2,26 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package =
+      (pkgs.vscodium.override
+        {
+          # isInsiders = true;
+          # https://wiki.archlinux.org/title/Wayland#Electron
+          commandLineArgs = [
+            "--ozone-platform-hint=auto"
+            "--ozone-platform=wayland"
+            # make it use GTK_IM_MODULE if it runs with Gtk4, so fcitx5 can work with it.
+            # (only supported by chromium/chrome at this time, not electron)
+            "--gtk-version=4"
+            # make it use text-input-v1, which works for kwin 5.27 and weston
+            "--enable-wayland-ime"
+
+            # TODO: fix https://github.com/microsoft/vscode/issues/187436
+            # still not works...
+            "--password-store=gnome" # use gnome-keyring as password store
+          ];
+        });
+
     extensions = with pkgs.vscode-extensions; [
       # nix language
       bbenoist.nix
@@ -21,6 +40,9 @@
       # Color theme
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+
+      # Vim
+      vscodevim.vim
     ];
     userSettings = {
       "update.mode" = "none";
@@ -82,6 +104,16 @@
       "C_Cpp.workspaceParsingPriority" = "medium";
       "C_Cpp.clang_format_sortIncludes" = true;
       "C_Cpp.doxygen.generatedStyle" = "/**";
+      "vim.insertModeKeyBindings" = [
+        {
+          "before" = ["j" "k"];
+          "after" = ["<Esc>"];
+        }
+        {
+          "before" = ["<C-s>"];
+          "commands" = ["workbench.action.files.save"];
+        }
+      ];
     };
     # Keybindings
     keybindings = [

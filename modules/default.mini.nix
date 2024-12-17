@@ -31,5 +31,9 @@
     stateVersion = "24.05";
   };
 
+  home.sessionVariables = {
+    DONT_PROMPT_WSL_INSTALL = "1";
+  };
+
   programs.home-manager.enable = true;
 }
