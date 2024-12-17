@@ -26,6 +26,7 @@
     targets = {
       spicetify.enable = true;
       hyprpaper.enable = true;
+      waybar.enable = true;
       hyprlock.enable = true;
       gedit.enable = true;
       firefox.enable = true;

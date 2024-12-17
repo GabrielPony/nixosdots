@@ -87,11 +87,11 @@
       on-click-right = "pavucontrol";
     };
     battery = {
-      format = "{icon} {capacity}%";
+      format = "{icon}  {capacity}%";
       format-icons = [ " " " " " " " " " " ];
       format-charging = "  {capacity}%";
       format-full = "  {capacity}%";
-      format-warning = " {capacity}%";
+      format-warning = "  {capacity}%";
       interval = 5;
       states = {
         warning = 20;

@@ -10,7 +10,8 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       monaspace
-      (nerdfonts.override { fonts = [ "Monaspace" ]; })
+      jetbrains-mono
+      (nerdfonts.override { fonts = [ "Monaspace" "JetBrainsMono" "Noto" ]; })
     ];
 
     enableDefaultPackages = false;
