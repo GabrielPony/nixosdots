@@ -17,7 +17,8 @@ in
 
   home-manager.users."${username}" = {
     wayland.windowManager.hyprland.settings.monitor = [
-      "eDP-1, 2880x1800@90,     0x0, 1"
+      "DP-1, 3840x2160@59.98,     0x0, 1"
+      "eDP-1, 2880x1800@90,     3840x0, 1"
     ];
   };
 
