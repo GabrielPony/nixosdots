@@ -11,11 +11,11 @@ in
   home.packages = (with pkgs; [
     ripgrep
     gcc
-    cargo
     lazygit
     unzip
     nodejs
     python3
+    pkgs.rust-bin.stable.latest.default
     #
     lua-language-server    # Lua LSP
     nixpkgs-fmt           # Nix 格式化
