@@ -57,6 +57,9 @@ in
     jetbrains.clion
     _stm32cubemx
     minicom
+    rkdeveloptool
+    rkflashtool
+    android-tools
 
     # C / C++
     gcc
