@@ -73,7 +73,7 @@
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ inputs.nur.overlay];
+        overlays = [ inputs.nur.overlay inputs.rust-overlay.overlays.default];
         config.allowUnfree = true; # 如果需要的话
       };
     in
