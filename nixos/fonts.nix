@@ -35,6 +35,7 @@
         monospace = [
           "Monaspace Argon"
           "MonaspiceAr Nerd Font" # Neon 变体的 Nerd Font 版本
+          "JetBrainsMono Nerd Font"
           # 其他变体的 Nerd Font 版本：
           # "MonaspiceAr Nerd Font"   # Argon
           # "MonaspiceXe Nerd Font"   # Xenon

@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   services = {
     gvfs.enable = true;
@@ -25,6 +25,12 @@
         "ntp.ubuntu.com" # Ubuntu NTP 服务器
         "time.windows.com" # Windows 时间服务器
       ];
+    };
+    nfs.server = {
+      enable = true;
+      exports = ''
+        /home/${config.var.username}/Share *(rw,sync,no_subtree_check,no_root_squash)
+      '';
     };
   };
   services.udev.extraRules = ''

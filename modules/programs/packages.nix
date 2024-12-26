@@ -45,6 +45,8 @@ in
     usbutils
     meld
     # orca-slicer
+    vlc
+    scrcpy
     motrix
     telegram-desktop
     xfce.thunar
@@ -53,6 +55,7 @@ in
     # Emedd
     stlink
     openocd
+    inetutils
     gcc-arm-embedded-9
     jetbrains.clion
     _stm32cubemx
