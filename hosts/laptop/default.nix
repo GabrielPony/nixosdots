@@ -29,6 +29,7 @@
     ../../nixos/variables-config.nix
     ../../nixos/virtualization.nix
     ../../nixos/xdg-portal.nix
+    ../../nixos/gamescope.nix
 
     # Choose your theme here
 
