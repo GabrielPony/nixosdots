@@ -11,6 +11,7 @@
       noto-fonts-emoji
       monaspace
       jetbrains-mono
+      dejavu_fonts
       (nerdfonts.override { fonts = [ "Monaspace" "JetBrainsMono" "Noto" ]; })
     ];
 

@@ -23,8 +23,8 @@
     network = {
       gateway = "192.168.7.3";
       nameservers = [ "114.114.114.114" "8.8.8.8" ];
-      tcpPorts = [ 22 80 443 2049 59010 59011 ];
-      udpPorts = [ 2049 59010 59011 ];
+      tcpPorts = [ 22 80 443 2049 59010 59011 8485 ];
+      udpPorts = [ 2049 59010 59011 8485 ];
     };
 
     # Choose your theme variables here

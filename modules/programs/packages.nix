@@ -6,6 +6,10 @@ in
 {
   home.packages = (with pkgs; [
     _2048
+    radeontop
+    vulkan-tools
+    adwsteamgtk
+    gpu-viewer
     wkhtmltopdf
     aseprite
     webkitgtk_4_1
