@@ -13,6 +13,7 @@
     ../../nixos/services.nix
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
+    ../../nixos/docker.nix
     ../../nixos/security.nix
     ../../nixos/timezone.nix
     ../../nixos/variables-config.nix

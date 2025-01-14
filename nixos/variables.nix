@@ -42,7 +42,7 @@
         owner = "GabrielPony"; # 替换为你的 GitHub 用户名
         name = "dotfiles"; # 替换为你的仓库名
         rev = "main"; # 可以是分支名、tag 或 commit hash
-        sha256 = "sha256-2kIgjBvz14tfO+U27hu450Fe7Oi5uxum9kUyisxQT1U=";
+        sha256 = "sha256-iNlM6lW6p3OvYGdyEH9tXEeLDIZViv7MXunOvfUTjRk=";
       };
     };
   };

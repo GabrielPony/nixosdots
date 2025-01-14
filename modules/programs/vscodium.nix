@@ -1,4 +1,15 @@
 { pkgs, ... }:
+let
+  marketplace = publisher: name: version: sha256:
+    (pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+      inherit name publisher version sha256;
+    }]);
+
+  # 简写方式定义插件
+  monica = marketplace "MonicaIM" "monica-code" "1.2.4" "sha256-N6RQqFpH+McZ7iNIoI+TnPhNZRJNP5MfBjheYhUTzgI=";
+  # 如果要添加其他插件，就继续在这里定义
+  # somePlugin = marketplace "publisher" "name" "version" "sha256";
+in
 {
   programs.vscode = {
     enable = true;
@@ -43,7 +54,9 @@
 
       # Vim
       vscodevim.vim
-    ];
+    ]
+    ++ monica;
+
     userSettings = {
       "update.mode" = "none";
       "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
