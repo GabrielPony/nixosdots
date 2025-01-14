@@ -67,6 +67,7 @@ in
     rkdeveloptool
     rkflashtool
     android-tools
+    serial-studio
 
     # C / C++
     gcc

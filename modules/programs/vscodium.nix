@@ -6,7 +6,7 @@ let
     }]);
 
   # 简写方式定义插件
-  monica = marketplace "MonicaIM" "monica-code" "1.2.4" "sha256-N6RQqFpH+McZ7iNIoI+TnPhNZRJNP5MfBjheYhUTzgI=";
+  monica = marketplace "MonicaIM" "monica-code" "1.2.4" "sha256-fxoBKhPQerI7Sqgc8GVf5hZEpMdSTtQ5GZQnHGtllMI=";
   # 如果要添加其他插件，就继续在这里定义
   # somePlugin = marketplace "publisher" "name" "version" "sha256";
 in
