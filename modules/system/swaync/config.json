@@ -103,6 +103,15 @@
             "command": "swaylock"
           },
           {
+            "label": "󰒲  Suspend",
+            "command": "systemctl hibernate"
+          },
+          {
+            "label": " Hibernate",
+            "command": "systemctl hibernate"
+          },
+
+          {
             "label": "  Reboot",
             "command": "systemctl reboot"
           },

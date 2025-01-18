@@ -16,10 +16,21 @@ in
   };
 
   home-manager.users."${username}" = {
-    wayland.windowManager.hyprland.settings.monitor = [
-      "DP-2, 3840x2160@59.98,     0x0, 1"
-      "eDP-1, 2880x1800@90,     3840x0, 1"
-    ];
+    wayland.windowManager.hyprland = {
+      enable = true;
+      settings = {
+        monitor = [
+          "DP-2, 3840x2160@59.98, 0x0, 1"
+          "eDP-1, 2880x1800@90, 3840x0, 1"
+        ];
+
+        bindl = [
+          # ", switch:[switch name], exec, swaylock"
+          ", switch:on:Lid Switch, exec, hyprctl keyword monitor 'eDP-1, disable'"
+          ", switch:off:Lid Switch, exec, hyprctl keyword monitor 'eDP-1, 2880x1800@90, 3840x0, 1'"
+        ];
+      };
+    };
   };
 
   boot.kernelModules = [ "kvm-amd" ];
