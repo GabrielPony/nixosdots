@@ -6,7 +6,7 @@ let
     }]);
 
   # 简写方式定义插件
-  monica = marketplace "MonicaIM" "monica-code" "1.2.4" "sha256-fxoBKhPQerI7Sqgc8GVf5hZEpMdSTtQ5GZQnHGtllMI=";
+  monica = marketplace "MonicaIM" "monica-code" "1.2.4" "sha256-N6RQqFpH+McZ7iNIoI+TnPhNZRJNP5MfBjheYhUTzgI=";
   # 如果要添加其他插件，就继续在这里定义
   # somePlugin = marketplace "publisher" "name" "version" "sha256";
 in
@@ -60,7 +60,7 @@ in
     userSettings = {
       "update.mode" = "none";
       "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
-      "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
+      # "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
 
       "window.menuBarVisibility" = "toggle";
       "editor.fontSize" = 16;
@@ -78,12 +78,12 @@ in
       "workbench.editor.limit.enabled" = true;
       "workbench.editor.limit.value" = 10;
       "workbench.editor.limit.perEditorGroup" = true;
-      "workbench.editor.showTabs" = "single";
+      "workbench.editor.showTabs" = "multiple";
       "files.autoSave" = "onWindowChange";
       "explorer.openEditors.visible" = 0;
       "breadcrumbs.enabled" = false;
       "editor.renderControlCharacters" = false;
-      "workbench.activityBar.location" = "left";
+      # "workbench.activityBar.location" = "left";
       "workbench.statusBar.visible" = true;
       "editor.scrollbar.verticalScrollbarSize" = 2;
       "editor.scrollbar.horizontalScrollbarSize" = 2;

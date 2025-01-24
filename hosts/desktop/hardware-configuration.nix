@@ -12,6 +12,9 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "amdgpu"];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = [
+    "amdgpu.gpu_scaling=1"  # 启用 GPU 缩放
+  ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/9708a22c-bcb4-4692-ae73-4f8a2e36c201";

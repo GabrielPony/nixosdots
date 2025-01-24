@@ -263,6 +263,8 @@
 
       # windowrulev2
       windowrulev2 = [
+        "float, class:^(pavucontrol)$"
+        "center, class:^(pavucontrol)$"
         "float, title:^(Picture-in-Picture)$"
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"
