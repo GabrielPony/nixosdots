@@ -54,8 +54,8 @@ in
 
       # Vim
       vscodevim.vim
-    ]
-    ++ monica;
+    ];
+    # ++ monica;
 
     userSettings = {
       "update.mode" = "none";
