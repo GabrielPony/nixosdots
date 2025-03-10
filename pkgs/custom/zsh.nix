@@ -13,8 +13,8 @@ stdenv.mkDerivation rec {
   zsh-src = fetchFromGitHub {
     owner = "romkatv";
     repo = "powerlevel10k";
-    rev = "master"; # 您也可以指定具体的 commit hash
-    sha256 = "sha256-0ORdl9kLhfaDPhUZU3bxd3oVqB7hsrZPZ2wUPVu48gY="; # 首次运行会提示正确的 sha256，替换这个值
+    rev = "8fa10f43a0f65a5e15417128be63e68e1d5b1f66"; # 您也可以指定具体的 commit hash
+    sha256 = "sha256-isxgLWpbBuNoETXCOlJ4nwGSxMwCjoVF5D0dMZWtM5s="; # 首次运行会提示正确的 sha256，替换这个值
   };
 
   p10k-src = fetchFromGitHub {

@@ -30,6 +30,14 @@ in
       # terminal color
       if [[ -n $TMUX ]]; then
         export TERM=tmux-256color
+        if [[ -n "$NVIM" ]]; then
+          # 1. Disable bracketed paste mode which can cause echo issues in nested terminals
+          # unset zle_bracketed_paste
+          # 2. Disable ZSH line editor initialization to prevent input processing conflicts
+          # DISABLE_LINE_INIT=true
+          # 3. Disable automatic terminal title updates to avoid output interference
+          DISABLE_AUTO_TITLE=true
+      fi
       else
         export TERM=xterm-256color
       fi
