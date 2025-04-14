@@ -44,6 +44,12 @@ in
     pkgsi686Linux.gcc
   ];
 
+  services = {
+    xserver = {
+        enable = true;
+        xkb.layout = "us,cn,fr";
+    };
+  };
   services.logind.extraConfig = ''
     # don't shutdown when power button is short-pressed
     HandlePowerKey=ignore
