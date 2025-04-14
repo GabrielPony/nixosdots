@@ -6,5 +6,8 @@ in
 {
   home.packages = (with pkgs; [
     yazi
+    socat
+    usbutils
+    minicom
   ]);
 }

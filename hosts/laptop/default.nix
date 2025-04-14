@@ -11,6 +11,7 @@
 
 
     # nixos
+    ../../nixos/base.nix
     ../../nixos/audio.nix
     ../../nixos/bluetooth.nix
     ../../nixos/bootloader.nix

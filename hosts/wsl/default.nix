@@ -9,6 +9,7 @@
     ./../../nixos/variables.nix
 
     # nixos
+    ../../nixos/base.nix
     ../../nixos/users.nix
     ../../nixos/services.nix
     ../../nixos/home-manager.nix
