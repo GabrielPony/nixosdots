@@ -17,6 +17,12 @@ in
   };
   hardware.enableRedistributableFirmware = true;
   services = {
+    services = {
+      xserver = {
+          enable = true;
+          xkb.layout = "us,cn,fr";
+      };
+    };
     displayManager.autoLogin = {
       enable = true;
       user = "${username}";

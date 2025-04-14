@@ -11,6 +11,7 @@ let
   # somePlugin = marketplace "publisher" "name" "version" "sha256";
 in
 {
+  vscode-remote-workaround.enable = true;
   programs.vscode = {
     enable = true;
     package =
