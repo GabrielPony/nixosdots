@@ -15,7 +15,7 @@ in
     unzip
     nodejs
     python3
-    pkgs.rust-bin.nightly.latest.default
+    # pkgs.rust-bin.nightly.latest.default
     #
     lua-language-server    # Lua LSP
     nixpkgs-fmt           # Nix 格式化

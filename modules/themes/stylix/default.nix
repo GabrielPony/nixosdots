@@ -34,7 +34,7 @@
       #   popups = 11;
       # };
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "Monaspace" ]; }; # 改为 MonaspiceNerd
+        package = pkgs.nerd-fonts.monaspace;
         name = "Monospice Nerd Font"; # 使用 Neon 变体
       };
       sansSerif = {

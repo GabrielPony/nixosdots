@@ -4,7 +4,7 @@
     inputs.home-manager.nixosModules.home-manager
     inputs.nixos-wsl.nixosModules.wsl
     inputs.stylix.nixosModules.stylix
-    inputs.nur.nixosModules.nur
+    inputs.nur.modules.nixos.default
     ./addon-configuration.nix
     ./../../nixos/variables.nix
 

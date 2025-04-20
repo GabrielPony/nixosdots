@@ -3,7 +3,7 @@
     # modules
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
-    inputs.nur.nixosModules.nur
+    inputs.nur.modules.nixos.default
 
     ./addon-configuration.nix
     ./hardware-configuration.nix
@@ -41,6 +41,9 @@
 
   # Don't touch this
   # nix.nixPath = lib.mkForce ["/etc/nix/inputs"];
+  nix.settings = {
+    access-tokens = "github.com=";
+  };
   system.stateVersion = "24.05";
   powerManagement.cpuFreqGovernor = "performance";
 }

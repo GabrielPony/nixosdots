@@ -164,7 +164,7 @@ in
       #     ];
       #   }
       # ];
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         privacy-badger
         ublock-origin
         vimium
@@ -199,16 +199,16 @@ in
               template =
                 "https://wiki.nixos.org/index.php?search={searchTerms}";
             }];
-            iconUpdateURL = "https://wiki.nixos.org/favicon.png";
+            icons = "https://wiki.nixos.org/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@nw" ];
           };
 
-          "Bing".metaData.hidden = true;
-          "Google".metaData.alias =
+          "bing".metaData.hidden = true;
+          "google".metaData.alias =
             "@g"; # builtin engines only support specifying one additional alias
         };
-        default = "DuckDuckGo";
+        default = "ddg";
 
       };
 

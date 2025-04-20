@@ -84,17 +84,17 @@
           modules = [
             (import ./hosts/desktop)
           ];
-          specialArgs = { host = "desktop"; inherit self inputs lib pkgs; };
+          specialArgs = { host = "desktop"; inherit self inputs lib; };
         };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ (import ./hosts/laptop) ];
-          specialArgs = { host = "laptop"; inherit self inputs lib pkgs; };
+          specialArgs = { host = "laptop"; inherit self inputs lib; };
         };
         wsl = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ (import ./hosts/wsl) ];
-          specialArgs = { host = "wsl"; inherit self inputs lib pkgs; };
+          specialArgs = { host = "wsl"; inherit self inputs lib; };
         };
       };
     };

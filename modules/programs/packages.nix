@@ -60,7 +60,7 @@ in
     stlink
     openocd
     inetutils
-    gcc-arm-embedded-9
+    gcc-arm-embedded-13
     jetbrains.clion
     _stm32cubemx
     minicom

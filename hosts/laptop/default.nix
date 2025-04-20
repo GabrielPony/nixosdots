@@ -3,7 +3,7 @@
     # modules
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
-    inputs.nur.nixosModules.nur
+    inputs.nur.modules.nixos.default
 
     ./addon-configuration.nix
     ./hardware-configuration.nix

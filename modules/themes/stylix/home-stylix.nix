@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   gtk = {
     enable = true;
@@ -13,8 +13,8 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk2";
-    style.name = "gtk2";
+    platformTheme.name = lib.mkDefault "gtk2";
+    style.name = lib.mkDefault "gtk2";
   };
 
 
@@ -24,6 +24,7 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     targets = {
+      fcitx5.enable = true;
       spicetify.enable = true;
       hyprpaper.enable = true;
       waybar.enable = true;

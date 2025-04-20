@@ -33,7 +33,7 @@ in
           ];
         });
 
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       # nix language
       bbenoist.nix
       # nix-shell suport
@@ -57,13 +57,12 @@ in
     ];
     # ++ monica;
 
-    userSettings = {
+    profiles.default.userSettings = {
       "update.mode" = "none";
       "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
       # "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
 
       "window.menuBarVisibility" = "toggle";
-      "editor.fontSize" = 16;
       "vsicons.dontShowNewVersionMessage" = true;
       "explorer.confirmDragAndDrop" = false;
       "editor.fontLigatures" = true;
@@ -129,7 +128,7 @@ in
       ];
     };
     # Keybindings
-    keybindings = [
+    profiles.default.keybindings = [
       {
         key = "ctrl+q";
         command = "editor.action.commentLine";

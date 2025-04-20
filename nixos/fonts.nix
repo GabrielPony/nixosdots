@@ -12,7 +12,9 @@
       monaspace
       jetbrains-mono
       dejavu_fonts
-      (nerdfonts.override { fonts = [ "Monaspace" "JetBrainsMono" "Noto" ]; })
+      nerd-fonts.monaspace
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.noto
     ];
 
     enableDefaultPackages = false;
