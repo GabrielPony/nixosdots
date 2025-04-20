@@ -100,6 +100,7 @@ in
     xdg-utils
     xxd
     inputs.alejandra.defaultPackage.${system}
+    code-cursor
   ]);
   home.file.".local/share/applications/STM32CubeMX.desktop".source =
     "${_stm32cubemx}/share/applications/STM32CubeMX.desktop";

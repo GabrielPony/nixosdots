@@ -26,7 +26,6 @@
     ../../nixos/services.nix
     ../../nixos/timezone.nix
     ../../nixos/users.nix
-    ../../nixos/utils.nix
     ../../nixos/variables-config.nix
     ../../nixos/virtualization.nix
     ../../nixos/xdg-portal.nix
