@@ -101,6 +101,7 @@ in
     xxd
     inputs.alejandra.defaultPackage.${system}
     code-cursor
+    orca-slicer
   ]);
   home.file.".local/share/applications/STM32CubeMX.desktop".source =
     "${_stm32cubemx}/share/applications/STM32CubeMX.desktop";
