@@ -61,7 +61,10 @@
     };
     polarity = "dark";
     targets = {
-      grub.enable = true;
+      grub = {
+        enable = true;
+        useWallpaper = true;
+      };
       gnome.enable = true;
       gtk.enable = true;
       nixos-icons.enable = true;

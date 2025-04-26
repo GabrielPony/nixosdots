@@ -32,6 +32,7 @@
       gedit.enable = true;
       firefox.enable = true;
       gtk.enable = true;
+      gtk.flatpakSupport.enable = true;
     };
   };
 }

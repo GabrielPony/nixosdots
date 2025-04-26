@@ -2,19 +2,19 @@
 {
   home.packages = (with pkgs; [ rofi-wayland ]);
 
-xdg.configFile."rofi/theme.rasi".text = ''
-  * {
-    bg-col: #${config.lib.stylix.colors.base00};      /* crust/surface0 */
-    bg-col-light: #${config.lib.stylix.colors.base01}; /* mantle */
-    border-col: #${config.lib.stylix.colors.base04};   /* subtext0 */
-    selected-col: #${config.lib.stylix.colors.base02}; /* surface1 */
-    green: #${config.lib.stylix.colors.base0B};        /* green */
-    fg-col: #${config.lib.stylix.colors.base05};       /* text */
-    fg-col2: #${config.lib.stylix.colors.base04};      /* subtext0 */
-    grey: #${config.lib.stylix.colors.base04};         /* subtext0 */
-    highlight: @green;
-  }
-'';
+  xdg.configFile."rofi/theme.rasi".text = ''
+    * {
+      bg-col: #${config.lib.stylix.colors.base00};      /* crust/surface0 */
+      bg-col-light: #${config.lib.stylix.colors.base01}; /* mantle */
+      border-col: #${config.lib.stylix.colors.base04};   /* subtext0 */
+      selected-col: #${config.lib.stylix.colors.base02}; /* surface1 */
+      green: #${config.lib.stylix.colors.base0B};        /* green */
+      fg-col: #${config.lib.stylix.colors.base05};       /* text */
+      fg-col2: #${config.lib.stylix.colors.base04};      /* subtext0 */
+      grey: #${config.lib.stylix.colors.base04};         /* subtext0 */
+      highlight: @green;
+    }
+  '';
   xdg.configFile."rofi/config.rasi".text = ''
     configuration{
       modi: "run,drun,window";
