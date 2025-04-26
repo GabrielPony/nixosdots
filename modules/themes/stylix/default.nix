@@ -7,44 +7,23 @@
     cursor = {
       package = pkgs.nordzy-cursor-theme;
       name = "Nordzy-cursors-white";
+      # package = pkgs.catppuccin-cursors;
+      # name = "mochaMauve";
       size = 24;
+
     };
-    # iconTheme = {
-    #   package = pkgs.papirus-icon-theme.override { color = "indigo"; };
-    #   dark = "Papirus-Dark"; # used
-    #   light = "Papirus-Light"; # unused
-    # };
     fonts = {
-      # monospace = {
-      #   package = pkgs.nerdfonts.override { fonts = [ "Monaspace" ]; };
-      #   name = "Monospice Nerd Font";
-      # };
-      # sansSerif = {
-      #   package = pkgs.dejavu_fonts;
-      #   name = "DejaVu Sans";
-      # };
-      # serif = {
-      #   package = pkgs.dejavu_fonts;
-      #   name = "DejaVu Serif";
-      # };
-      # sizes = {
-      #   applications = 11;
-      #   terminal = 12;
-      #   desktop = 11;
-      #   popups = 11;
-      # };
       monospace = {
         package = pkgs.nerd-fonts.monaspace;
-        name = "Monospice Nerd Font"; # 使用 Neon 变体
+        name = "Monospice Nerd Font";
       };
       sansSerif = {
-        # 改为更现代的字体组合
-        package = pkgs.source-sans; # 或保持 dejavu_fonts
-        name = "Source Sans"; # 或保持 "DejaVu Sans"
+        package = pkgs.source-sans;
+        name = "Source Sans";
       };
       serif = {
-        package = pkgs.source-serif; # 或保持 dejavu_fonts
-        name = "Source Serif"; # 或保持 "DejaVu Serif"
+        package = pkgs.source-serif;
+        name = "Source Serif";
       };
       sizes = {
         applications = 11;
@@ -63,10 +42,11 @@
     targets = {
       grub = {
         enable = true;
-        useWallpaper = true;
+        useWallpaper = false;
       };
       gnome.enable = true;
       gtk.enable = true;
+      spicetify.enable = true;
       nixos-icons.enable = true;
     };
 

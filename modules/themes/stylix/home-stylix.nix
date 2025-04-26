@@ -23,6 +23,15 @@
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
+    cursor = {
+      package = pkgs.nordzy-cursor-theme;
+      name = "Nordzy-cursors-white";
+      # package = pkgs.catppuccin-cursors;
+      # name = "mochaMauve";
+      size = 24;
+
+    };
+
     targets = {
       fcitx5.enable = true;
       spicetify.enable = true;

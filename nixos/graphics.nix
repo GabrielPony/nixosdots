@@ -18,8 +18,8 @@ in
   hardware.enableRedistributableFirmware = true;
   services = {
     xserver = {
-        enable = true;
-        xkb.layout = "us,cn,fr";
+      enable = true;
+      xkb.layout = "us,cn,fr";
     };
     displayManager.autoLogin = {
       enable = true;
@@ -28,9 +28,9 @@ in
 
     libinput = {
       enable = true;
-      # mouse = {
-      #   accelProfile = "flat";
-      # };
+      mouse = {
+        accelProfile = "flat";
+      };
     };
 
     # 以下是可选的图形界面相关服务
