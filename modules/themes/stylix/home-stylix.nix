@@ -1,5 +1,9 @@
-{ pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
+  home.file = {
+    "Pictures/wallpapers/others/cat-leaves.png".source = inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png";
+  };
+
   gtk = {
     enable = true;
     iconTheme = {

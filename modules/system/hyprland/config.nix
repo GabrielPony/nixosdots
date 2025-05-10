@@ -152,7 +152,7 @@
         "$mainMod, E, exec, thunar"
         "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W,exec, wallpaper-picker"
+        "$mainMod, W ,exec, wallpaper-picker"
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
