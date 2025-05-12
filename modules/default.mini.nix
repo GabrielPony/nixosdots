@@ -9,14 +9,10 @@
     ./themes/stylix/home-stylix.nix
     # Programs
     ./programs/packages.mini.nix
-    ./programs/kitty.nix
     ./programs/tmux.nix
     ./programs/nvim.nix
     ./programs/zsh.nix
-    ./programs/gedit.nix
-    ./programs/vscodium.nix
     ./programs/git.nix
-    ./programs/thunar.nix
     ./programs/lazygit.nix
   ];
 

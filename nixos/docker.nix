@@ -19,13 +19,10 @@
     # 配置 docker 镜像加速
     daemon.settings = {
       "registry-mirrors" = [
-        "https://iimlg2k5.mirror.aliyuncs.com"
-        "https://ccr.ccs.tencentyun.com"
-        "https://docker.mirrors.ustc.edu.cn"
-        "https://hub-mirror.c.163.com"
+        "https://docker.m.daocloud.io"
+        "https://docker.1ms.run"
       ];
     };
-
   };
 
 
