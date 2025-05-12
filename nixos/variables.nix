@@ -34,7 +34,7 @@
   };
   config.user = {
     git = {
-      username = "Kony";
+      username = "Gabriel";
       email = "aoengo@outlook.com";
     };
     custom = {
