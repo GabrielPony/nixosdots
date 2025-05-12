@@ -75,11 +75,11 @@ lsblk $DISK
 # 5. Cloning NixOS configuration
 echo -e "${GREEN}=== Cloning NixOS configuration ===${NC}"
 mkdir -p /mnt/etc
-git clone https://github.com/GabrielPony/nixosdots.git /mnt/etc/nixos
+git clone https://github.com/GabrielPony/nixosdots.git /mnt/etc/nixos/nixosdots
 
 # 6. Installing NixOS
 echo -e "${GREEN}=== Starting NixOS installation ===${NC}"
-nixos-install --root /mnt --flake /mnt/etc/nixos#$HOSTNAME --no-root-passwd
+nixos-install --root /mnt --flake /mnt/etc/nixos/nixosdots#$HOSTNAME --no-root-passwd
 
 echo -e "${GREEN}=== Installation complete ===${NC}"
 echo -e "${YELLOW}Please set root password:${NC}"
