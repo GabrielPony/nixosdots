@@ -11,9 +11,9 @@ in
         efiSupport = false;   # 禁用 EFI 支持
         configurationLimit = 5;
       };
-      kernelPackages = pkgs.linuxPackages_latest; # _zen, _hardened, _rt, _rt_latest, etc.
-      consoleLogLevel = 0;
     };
+    kernelPackages = pkgs.linuxPackages_latest; # _zen, _hardened, _rt, _rt_latest, etc.
+    consoleLogLevel = 0;
   };
   networking = {
     interfaces.eno1.ipv4.addresses = [{
