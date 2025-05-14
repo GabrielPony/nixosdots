@@ -96,6 +96,11 @@
           modules = [ (import ./hosts/wsl) ];
           specialArgs = { host = "wsl"; inherit self inputs lib; };
         };
+        vm = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/vm) ];
+          specialArgs = { host = "vm"; inherit self inputs lib; };
+        };
       };
     };
 }
