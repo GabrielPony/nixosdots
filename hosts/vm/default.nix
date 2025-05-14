@@ -11,6 +11,7 @@
 
     # nixos
     ../../nixos/base.nix
+    ../../nixos/bootloader.nix
     ../../nixos/users.nix
     ../../nixos/services.nix
     ../../nixos/home-manager.nix
