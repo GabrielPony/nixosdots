@@ -110,15 +110,19 @@ fi
 echo -e "${GREEN}=== Partitioning and mounting complete ===${NC}"
 lsblk $DISK
 
-# 5. Cloning NixOS configuration
-echo -e "${GREEN}=== Cloning NixOS configuration ===${NC}"
-mkdir -p /mnt/etc
+# 5. Generate NixOS configuration
+echo -e "${GREEN}=== Generating NixOS configuration ===${NC}"
+nixos-generate-config --root /mnt
+
+# 6. Cloning NixOS configuration repository
+echo -e "${GREEN}=== Cloning NixOS configuration repository ===${NC}"
 git clone https://github.com/GabrielPony/nixosdots.git /mnt/etc/nixos/nixosdots
 
-# Create a file to indicate boot mode for future reference
-echo "$BOOT_MODE" > /mnt/etc/nixos/boot_mode
+# 7. Copy generated hardware configuration to host-specific directory
+echo -e "${GREEN}=== Copying hardware configuration to host directory ===${NC}"
+cp /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/nixosdots/hosts/$HOSTNAME/
 
-# 6. Installing NixOS
+# 8. Installing NixOS
 echo -e "${GREEN}=== Starting NixOS installation ===${NC}"
 nixos-install --root /mnt --flake /mnt/etc/nixos/nixosdots#$HOSTNAME --no-root-passwd
 
