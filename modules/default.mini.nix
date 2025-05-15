@@ -5,8 +5,6 @@
   imports = [
     ../nixos/variables.nix
 
-    # themes
-    ./themes/stylix/home-stylix.nix
     # Programs
     ./programs/packages.mini.nix
     ./programs/tmux.nix
