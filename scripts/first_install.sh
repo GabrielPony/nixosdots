@@ -57,7 +57,7 @@ if [ "$BOOT_MODE" = "uefi" ]; then
 
   # 2. Formatting partitions
   echo -e "${GREEN}=== Formatting partitions ===${NC}"
-  mkfs.fat -F 32 ${DISK}1
+  mkfs.fat -F 32 -n boot ${DISK}1
   mkfs.btrfs -f -L nixos ${DISK}2
   mkswap -L swap ${DISK}3
 
