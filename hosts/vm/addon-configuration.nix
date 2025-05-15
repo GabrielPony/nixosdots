@@ -16,8 +16,8 @@ in
     consoleLogLevel = 0;
   };
   networking = {
-    interfaces.eno1.ipv4.addresses = [{
-      address = "192.168.7.62";
+    interfaces.ens18.ipv4.addresses = [{
+      address = "192.168.7.12";
       prefixLength = 24;
     }];
   };
