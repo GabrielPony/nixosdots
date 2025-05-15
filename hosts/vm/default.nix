@@ -12,6 +12,7 @@
     # nixos
     ../../nixos/base.nix
     ../../nixos/users.nix
+    ../../nixos/network.nix
     ../../nixos/services.nix
     ../../nixos/home-manager.nix
     ../../nixos/nix.nix
