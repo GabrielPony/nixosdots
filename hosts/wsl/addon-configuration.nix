@@ -7,7 +7,6 @@ in
   # WSL 特定配置
   wsl = {
     enable = true;
-    nativeSystemd = true;
     wslConf.automount.root = "/mnt";
     wslConf.interop.appendWindowsPath = false;
     wslConf.network.generateHosts = false;
