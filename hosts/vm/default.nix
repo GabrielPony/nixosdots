@@ -20,6 +20,7 @@
     ../../nixos/security.nix
     ../../nixos/timezone.nix
     ../../nixos/variables-config.nix
+    ../../nixos/kasm.nix
 
     # Choose your theme here
     ../../modules/themes/stylix/default.nix
