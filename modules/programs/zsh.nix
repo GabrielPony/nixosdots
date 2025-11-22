@@ -55,6 +55,8 @@ export FZF_DEFAULT_OPTS="
 	--layout=reverse
 	--preview-window=border-rounded
 "
+# config for direnv
+eval "$(direnv hook zsh)"
     '';
 
     # initExtraFirst = ''

@@ -8,6 +8,7 @@
     # themes
     ./themes/stylix/home-stylix.nix
     # Programs
+    ./programs/python.nix
     ./programs/packages.nix
     ./programs/kitty.nix
     ./programs/tmux.nix

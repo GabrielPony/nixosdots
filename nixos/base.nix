@@ -14,6 +14,11 @@ in
     "/etc/profiles/per-user/${username}"
   ];
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   programs.nix-ld = {
     enable = true;
     package = pkgs.nix-ld;

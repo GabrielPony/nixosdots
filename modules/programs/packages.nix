@@ -5,6 +5,7 @@ let
 in
 {
   home.packages = (with pkgs; [
+    home-manager
     _2048
     radeontop
     vulkan-tools
@@ -74,9 +75,6 @@ in
     gnumake
     cmake
 
-    # Python
-    python3
-
     bleachbit # cache cleaner
     cmatrix
     gparted # partition manager
@@ -102,6 +100,10 @@ in
     inputs.alejandra.defaultPackage.${pkgs.stdenv.hostPlatform.system}
     code-cursor
     orca-slicer
+
+    gemini-cli
+    direnv
+    nix-direnv
   ]);
   home.file.".local/share/applications/STM32CubeMX.desktop".source =
     "${_stm32cubemx}/share/applications/STM32CubeMX.desktop";

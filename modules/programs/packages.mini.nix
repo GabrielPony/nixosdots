@@ -5,10 +5,13 @@ let
 in
 {
   home.packages = (with pkgs; [
+    home-manager
     yazi
     socat
     usbutils
     minicom
     gemini-cli
+    direnv
+    nix-direnv
   ]);
 }

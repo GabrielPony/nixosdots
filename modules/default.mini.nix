@@ -6,6 +6,7 @@
     ../nixos/variables.nix
 
     # Programs
+    ./programs/python.nix
     ./programs/packages.mini.nix
     ./programs/tmux.nix
     ./programs/nvim.nix
