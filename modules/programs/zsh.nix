@@ -1,6 +1,6 @@
 { pkgs, inputs, config, ... }:
 let
-  zsh-config = inputs.dotfiles.packages.${pkgs.system}.zsh-config;
+  zsh-config = inputs.dotfiles.packages.${pkgs.stdenv.hostPlatform.system}.zsh-config;
 in
 {
   programs.fzf.enable = true;

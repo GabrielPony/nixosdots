@@ -1,6 +1,6 @@
 { pkgs, inputs, lib, ... }:
 let
-  nvim-config = inputs.dotfiles.packages.${pkgs.system}.nvim-config;
+  nvim-config = inputs.dotfiles.packages.${pkgs.stdenv.hostPlatform.system}.nvim-config;
   shellAliases = {
     v = "nvim";
     vdiff = "nvim -d";

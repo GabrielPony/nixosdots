@@ -99,7 +99,7 @@ in
     wget
     xdg-utils
     xxd
-    inputs.alejandra.defaultPackage.${system}
+    inputs.alejandra.defaultPackage.${pkgs.stdenv.hostPlatform.system}
     code-cursor
     orca-slicer
   ]);

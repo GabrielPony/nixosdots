@@ -1,6 +1,6 @@
 { pkgs, inputs, lib, ... }:
 let
-  tmux-config = inputs.dotfiles.packages.${pkgs.system}.tmux-config;
+  tmux-config = inputs.dotfiles.packages.${pkgs.stdenv.hostPlatform.system}.tmux-config;
 in
 {
   home.packages = (with pkgs; [
