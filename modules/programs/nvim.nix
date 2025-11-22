@@ -1,6 +1,6 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, inputs, lib, ... }:
 let
-  nvim-config = pkgs.callPackage ./../../pkgs/custom/nvim.nix { inherit config; };
+  nvim-config = inputs.dotfiles.packages.${pkgs.system}.nvim-config;
   shellAliases = {
     v = "nvim";
     vdiff = "nvim -d";

@@ -16,10 +16,12 @@ in
 
   programs.nix-ld = {
     enable = true;
-    package = pkgs.nix-ld-rs; # only for NixOS 24.05
+    package = pkgs.nix-ld;
   };
 
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+  };
 
   # Faster rebuilding
   documentation = {
@@ -44,8 +46,10 @@ in
     pkgsi686Linux.gcc
   ];
 
-  services.logind.extraConfig = ''
-    # don't shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings = {
+    Login = {
+      HandleLidSwitch = "ignore";
+      HandlePowerKey = "ignore";
+    };
+  };
 }

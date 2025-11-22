@@ -9,5 +9,6 @@ in
     socat
     usbutils
     minicom
+    gemini-cli
   ]);
 }

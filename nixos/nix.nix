@@ -21,6 +21,7 @@ in
       allowed-users = [ "@wheel" "@nixbld" ];
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
+      access-tokens = [ "github.com=${config.var.github.token}" ];
       substituters = [
         "https://cache.nixos.org"
         "https://mirrors.ustc.edu.cn/nix-channels/store"

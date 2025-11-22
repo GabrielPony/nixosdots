@@ -65,6 +65,9 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dotfiles = {
+      url = "github:GabrielPony/dotfiles";
+    };
   };
 
   outputs = { nixpkgs, self, ... } @ inputs:

@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, config, ... }:
 let
-  zsh-config = pkgs.callPackage ./../../pkgs/custom/zsh.nix { inherit config; };
+  zsh-config = inputs.dotfiles.packages.${pkgs.system}.zsh-config;
 in
 {
   programs.fzf.enable = true;
@@ -19,7 +19,7 @@ in
       custom = "$HOME/.config/.oh-my-zsh/custom"; # 自定义目录
       theme = "powerlevel10k/powerlevel10k";
     };
-    initExtra = ''
+    initContent = ''
 # This will add to .zshrc
 ZSH_CUSTOM="$HOME/.config/.oh-my-zsh/custom"
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -84,7 +84,7 @@ export FZF_DEFAULT_OPTS="
     };
   };
 
-  programs.zsh.dotDir = ".config/zsh";
+  programs.zsh.dotDir = "${config.home.homeDirectory}/.config/zsh";
   home.packages = (with pkgs; [
     zsh
     fzf

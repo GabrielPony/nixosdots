@@ -67,7 +67,7 @@
     # file.".profile_picture.png" = { source = ./profile_picture.png; };
 
     # Don't touch this
-    stateVersion = "24.05";
+    stateVersion = config.var.version;
   };
 
   programs.home-manager.enable = true;

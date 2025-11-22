@@ -41,9 +41,6 @@
 
   # Don't touch this
   # nix.nixPath = lib.mkForce ["/etc/nix/inputs"];
-  nix.settings = {
-    access-tokens = "github.com=";
-  };
-  system.stateVersion = "24.05";
+  system.stateVersion = config.var.version;
   powerManagement.cpuFreqGovernor = "performance";
 }

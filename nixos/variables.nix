@@ -2,7 +2,7 @@
   imports = [ ./variables-config.nix ];
 
   config.var = {
-    version = "24.05";
+    version = "25.05";
 
     hsystem = "x86_64-linux";
     hostname = "nixos";
@@ -20,6 +20,12 @@
     autoUpgrade = false;
     autoGarbageCollector = false;
 
+    github = {
+      token = "";
+      name = "Gabriel"; # Add your Git username here
+      email = "aoengo@outlook.com"; # Add your Git email here
+    };
+
     network = {
       gateway = "192.168.7.3";
       nameservers = [ "114.114.114.114" "8.8.8.8" ];
@@ -31,19 +37,5 @@
     # theme-name = "FlatColor";
     theme-name = "adw-gtk3";
     # theme = import ../../themes/var/pinky.nix;
-  };
-  config.user = {
-    git = {
-      username = "Gabriel";
-      email = "aoengo@outlook.com";
-    };
-    custom = {
-      repo = {
-        owner = "GabrielPony"; # 替换为你的 GitHub 用户名
-        name = "dotfiles"; # 替换为你的仓库名
-        rev = "main"; # 可以是分支名、tag 或 commit hash
-        sha256 = "sha256-n9hSC7NopjOQRKEpZK1GWXXSPOy7BYrfZZ7pNx/tf/Q=";
-      };
-    };
   };
 }

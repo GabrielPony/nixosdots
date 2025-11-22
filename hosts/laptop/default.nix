@@ -41,6 +41,6 @@
 
   # Don't touch this
   # nix.nixPath = lib.mkForce ["/etc/nix/inputs"];
-  system.stateVersion = "24.05";
+  system.stateVersion = config.var.version;
   powerManagement.cpuFreqGovernor = "performance";
 }

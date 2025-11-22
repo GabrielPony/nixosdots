@@ -1,6 +1,6 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, inputs, lib, ... }:
 let
-  tmux-config = pkgs.callPackage ./../../pkgs/custom/tmux.nix { inherit config; };
+  tmux-config = inputs.dotfiles.packages.${pkgs.system}.tmux-config;
 in
 {
   home.packages = (with pkgs; [
