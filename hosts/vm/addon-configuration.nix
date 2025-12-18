@@ -1,4 +1,4 @@
-{ pkgs, inputs, nixpkgs, self, config, host, ... }:
+{ pkgs, inputs, nixpkgs, self, config, host, lib, ... }:
 let
   username = config.var.username;
 in
@@ -20,5 +20,44 @@ in
       address = "192.168.7.12";
       prefixLength = 24;
     }];
+  };
+
+  services.openvscode-server = {
+    enable = true;
+    user = "${username}";
+    group = "users";
+    host = "0.0.0.0";
+    port = 10002;
+    # connectionTokenFile = config.sops.secrets.openvscode-server-token.path;
+
+    package = pkgs.vscode-with-extensions.override {
+      vscode = pkgs.openvscode-server.overrideAttrs { passthru.executableName = "openvscode-server"; };
+      vscodeExtensions = with pkgs.vscode-extensions; [
+        bbenoist.nix
+        dracula-theme.theme-dracula
+        editorconfig.editorconfig
+        oderwat.indent-rainbow
+        christian-kohler.path-intellisense
+        mkhl.direnv
+        # Formatter
+        hookyqr.beautify
+        # Git Plugins
+        donjayamanne.githistory
+        eamodio.gitlens
+        # Golang
+        golang.go
+
+        spywhere.guides
+        pkief.material-icon-theme
+        ryu1kn.partial-diff
+        # ms-python.python
+        ms-azuretools.vscode-docker
+        octref.vetur
+        jnoortheen.nix-ide
+        llvm-vs-code-extensions.vscode-clangd  # Clangd 核心插件
+        xaver.clang-format                     # Clang-Format 格式化
+        ms-vscode.cmake-tools                  # CMake 支持
+      ];
+    };
   };
 }
