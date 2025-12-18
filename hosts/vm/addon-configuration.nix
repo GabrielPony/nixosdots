@@ -33,6 +33,8 @@ in
     package = pkgs.vscode-with-extensions.override {
       vscode = pkgs.openvscode-server.overrideAttrs { passthru.executableName = "openvscode-server"; };
       vscodeExtensions = with pkgs.vscode-extensions; [
+        asvetliakov.vscode-neovim
+        catppuccin.catppuccin-vsc
         bbenoist.nix
         dracula-theme.theme-dracula
         editorconfig.editorconfig
@@ -54,9 +56,9 @@ in
         ms-azuretools.vscode-docker
         octref.vetur
         jnoortheen.nix-ide
-        llvm-vs-code-extensions.vscode-clangd  # Clangd 核心插件
-        xaver.clang-format                     # Clang-Format 格式化
-        ms-vscode.cmake-tools                  # CMake 支持
+        llvm-vs-code-extensions.vscode-clangd
+        xaver.clang-format
+        ms-vscode.cmake-tools
       ];
     };
   };
