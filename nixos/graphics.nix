@@ -8,10 +8,9 @@ in
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        # 如果你需要视频硬件解码加速（强烈建议加上）
-    libva-vdpau-driver
-    libvdpau-va-gl
-  ];
+        libva-vdpau-driver
+        libvdpau-va-gl
+      ];
     };
   };
   hardware.enableRedistributableFirmware = true;
