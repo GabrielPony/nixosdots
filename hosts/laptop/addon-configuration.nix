@@ -32,6 +32,4 @@ in
       };
     };
   };
-
-  boot.kernelModules = [ "kvm-amd" ];
 }

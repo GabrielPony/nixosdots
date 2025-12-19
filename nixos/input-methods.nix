@@ -8,7 +8,7 @@
       fcitx5-pinyin-zhwiki
       librime
       fcitx5-rime
-      fcitx5-chinese-addons
+      qt6Packages.fcitx5-chinese-addons
     ];
   };
 }

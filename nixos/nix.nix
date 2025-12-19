@@ -23,8 +23,8 @@ in
       experimental-features = [ "nix-command" "flakes" ];
       access-tokens = [ "github.com=${config.var.github.token}" ];
       substituters = [
-        "https://cache.nixos.org"
         "https://mirrors.ustc.edu.cn/nix-channels/store"
+        "https://cache.nixos.org"
         "https://hyprland.cachix.org"
       ];
 

@@ -8,7 +8,7 @@
       wqy_zenhei
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       monaspace
       jetbrains-mono
       dejavu_fonts
