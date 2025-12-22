@@ -6,7 +6,7 @@
     ../nixos/variables.nix
 
     # themes
-    ./themes/stylix/home-stylix.nix
+    ./themes/catppuccin/user.nix
     # Programs
     ./programs/python.nix
     ./programs/packages.nix
@@ -15,10 +15,10 @@
     ./programs/nvim.nix
     ./programs/zsh.nix
     ./programs/wechat.nix
-    ./programs/discord.nix
+    # ./programs/discord.nix
     ./programs/gedit.nix
     ./programs/spicetify.nix
-    ./programs/qutebrowser/qutebrowser.nix
+    # ./programs/qutebrowser/qutebrowser.nix
     ./programs/cava.nix
     ./programs/vscodium.nix
     ./programs/ozone.nix
@@ -28,8 +28,9 @@
     # ./programs/spicetify
     # ./programs/nextcloud
     # ./programs/yazi
-    # ./programs/thunar
+    ./programs/thunar.nix
     ./programs/lazygit.nix
+    ./programs/nautilus.nix
     # ./programs/nh
     ./programs/firefox.nix
     # ./programs/server-page
@@ -39,6 +40,7 @@
 
     # System (Desktop environment like stuff)
     ./system/rofi.nix
+    ./system/fcitx5.nix
     ./system/waybar/default.nix
     ./system/hyprland/default.nix
     ./system/scripts/scripts.nix

@@ -116,7 +116,7 @@ nixos-generate-config --root /mnt
 
 # 6. Cloning NixOS configuration repository
 echo -e "${GREEN}=== Cloning NixOS configuration repository ===${NC}"
-git clone https://github.com/GabrielPony/nixosdots.git /mnt/etc/nixos/nixosdots
+git clone https://github.com/gagapony/nixosdots.git /mnt/etc/nixos/nixosdots
 
 # 7. Copy generated hardware configuration to host-specific directory
 echo -e "${GREEN}=== Copying hardware configuration to host directory ===${NC}"

@@ -29,7 +29,6 @@ in
     gtrash # rm replacement, put deleted files in system trash
     hexdump
     jdk17 # java
-    lazygit
     libreoffice
     nitch # systhem fetch util
     nix-prefetch-github
@@ -54,7 +53,7 @@ in
     scrcpy
     motrix
     telegram-desktop
-    xfce.thunar
+    # xfce.thunar
     todesk
 
     # Emedd

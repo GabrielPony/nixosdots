@@ -1,20 +1,11 @@
 { pkgs,config, ... }:
 {
-  home.packages = (with pkgs; [ rofi ]);
+  # home.packages = (with pkgs; [ rofi ]);
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi;
+  };
 
-  xdg.configFile."rofi/theme.rasi".text = ''
-    * {
-      bg-col: #${config.lib.stylix.colors.base00};      /* crust/surface0 */
-      bg-col-light: #${config.lib.stylix.colors.base01}; /* mantle */
-      border-col: #${config.lib.stylix.colors.base04};   /* subtext0 */
-      selected-col: #${config.lib.stylix.colors.base02}; /* surface1 */
-      green: #${config.lib.stylix.colors.base0B};        /* green */
-      fg-col: #${config.lib.stylix.colors.base05};       /* text */
-      fg-col2: #${config.lib.stylix.colors.base04};      /* subtext0 */
-      grey: #${config.lib.stylix.colors.base04};         /* subtext0 */
-      highlight: @green;
-    }
-  '';
   xdg.configFile."rofi/config.rasi".text = ''
     configuration{
       modi: "run,drun,window";
@@ -36,7 +27,7 @@
       sorting-method: "fzf";
     }
 
-    @theme "theme"
+    @theme "custom"
 
     element-text, element-icon , mode-switcher {
       background-color: inherit;
@@ -47,18 +38,18 @@
       height: 600px;
       width: 900px;
       border: 2px;
-      border-color: @border-col;
-      background-color: @bg-col;
+      lavenderor: @lavender;
+      background-color: @base;
       border-radius: 12px;
     }
 
     mainbox {
-      background-color: @bg-col;
+      background-color: @base;
     }
 
     inputbar {
       children: [prompt,entry];
-      background-color: @bg-col-light;
+      background-color: @surface0;
       border-radius: 5px;
       padding: 0px;
     }
@@ -66,7 +57,7 @@
     prompt {
       background-color: @green;
       padding: 4px;
-      text-color: @bg-col-light;
+      text-color: @surface0;
       border-radius: 3px;
       margin: 10px 0px 10px 10px;
     }
@@ -79,8 +70,8 @@
     entry {
       padding: 6px;
       margin: 10px 10px 10px 5px;
-      text-color: @fg-col;
-      background-color: @bg-col;
+      text-color: @text;
+      background-color: @base;
       border-radius: 3px;
     }
 
@@ -89,15 +80,15 @@
       padding: 6px 0px 0px;
       margin: 10px 0px 0px 6px;
       columns: 3;
-      background-color: @bg-col;
+      background-color: @base;
       cycle: true;
     }
 
     element {
       padding: 8px;
       margin: 0px 10px 4px 4px;
-      background-color: @bg-col;
-      text-color: @fg-col;
+      background-color: @base;
+      text-color: @text;
     }
 
     element-icon {
@@ -105,8 +96,8 @@
     }
 
     element selected {
-      background-color:  @selected-col ;
-      text-color: @fg-col2  ;
+      background-color:  @surface1 ;
+      text-color: @subtext0;
       border-radius: 3px;
     }
 
@@ -116,14 +107,14 @@
 
     button {
       padding: 10px;
-      background-color: @bg-col-light;
-      text-color: @grey;
+      background-color: @surface0;
+      text-color: @overlay0;
       vertical-align: 0.5;
       horizontal-align: 0.5;
     }
 
     button selected {
-      background-color: @bg-col;
+      background-color: @base;
       text-color: @green;
     }
   '';

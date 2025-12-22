@@ -237,6 +237,7 @@
           name = "volume-control";
           "match:title" = "^(Volume Control)$";
           float = true;
+          center = true;
           size = "700 450";
           move = "40 55%";
         }

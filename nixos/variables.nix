@@ -22,7 +22,7 @@
 
     github = {
       token = "";
-      name = "Gabriel"; # Add your Git username here
+      name = "gagapony"; # Add your Git username here
       email = "aoengo@outlook.com"; # Add your Git email here
     };
 
@@ -36,6 +36,14 @@
     # Choose your theme variables here
     # theme-name = "FlatColor";
     theme-name = "adw-gtk3";
+
+    catppuccin = {
+      flavor = "mocha";
+      basic-accent = "lavender";
+      fcitx5-accent = "blue";
+      cursor-accent = "light";
+    };
+
     # theme = import ../../themes/var/pinky.nix;
   };
 }

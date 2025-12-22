@@ -41,6 +41,10 @@
       url = "github:catppuccin/starship";
       flake = false;
     };
+    catppuccin= {
+      url = "github:catppuccin/nix";
+      flake = false;
+    };
     catppuccin-nix.url = "github:catppuccin/nix";
     stylix.url = "github:danth/stylix";
     hypr-contrib.url = "github:hyprwm/contrib";
@@ -66,7 +70,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dotfiles = {
-      url = "github:GabrielPony/dotfiles";
+      url = "github:gagapony/dotfiles";
     };
   };
 

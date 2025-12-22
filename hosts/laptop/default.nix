@@ -19,7 +19,6 @@
     ../../nixos/fonts.nix
     ../../nixos/graphics.nix
     ../../nixos/home-manager.nix
-    ../../nixos/input-methods.nix
     ../../nixos/network.nix
     ../../nixos/nix.nix
     ../../nixos/security.nix

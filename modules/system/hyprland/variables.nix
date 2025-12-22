@@ -26,7 +26,7 @@
     CLUTTER_BACKEND = "wayland";
     GTK_IM_MODULE = "wayland";
     GTK_THEME = "FlatColor:dark";
-    GLFW_IM_MODULE = "fcitx";
+    # GLFW_IM_MODULE = "fcitx";
     INPUT_METHOD = "fcitx";
     XMODIFIERS = "@im=fcitx";
     IMSETTINGS_MODULE = "fcitx";

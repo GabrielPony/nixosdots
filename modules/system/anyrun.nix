@@ -28,7 +28,7 @@
       @define-color border-col rgba(30, 30, 46, 0.7);
       @define-color selected-col rgba(150, 205, 251, 0.7);
       @define-color fg-col #D9E0EE;
-      @define-color fg-col2 #F28FAD;
+      @define-color maroon #F28FAD;
 
       * {
         transition: 200ms ease;
@@ -60,7 +60,7 @@
 
       /* anyrun's selected entry - Red */
       #match:selected {
-        color: @fg-col2;
+        color: @maroon;
         background: @selected-col;
       }
 

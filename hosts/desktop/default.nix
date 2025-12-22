@@ -19,7 +19,6 @@
     ../../nixos/fonts.nix
     ../../nixos/graphics.nix
     ../../nixos/home-manager.nix
-    ../../nixos/input-methods.nix
     ../../nixos/network.nix
     ../../nixos/nix.nix
     ../../nixos/security.nix
@@ -33,7 +32,8 @@
 
     # Choose your theme here
 
-    ../../modules/themes/stylix/default.nix
+
+    # ./../../modules/themes/catppuccin/nixos.nix
     ];
 
 

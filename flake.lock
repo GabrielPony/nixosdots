@@ -190,6 +190,22 @@
         "type": "github"
       }
     },
+    "catppuccin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765990358,
+        "narHash": "sha256-l8x0gU8mnYaGMl+gWrsSHKBJlZWD8KXJfHTkRlFiPI0=",
+        "owner": "catppuccin",
+        "repo": "nix",
+        "rev": "de1b60ca45a578f59f7d84c8d338b346017b2161",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "nix",
+        "type": "github"
+      }
+    },
     "catppuccin-bat": {
       "flake": false,
       "locked": {
@@ -261,15 +277,15 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1766195823,
-        "narHash": "sha256-idELFbEh7V30j3tcPztu+k4mhw5qMp0jImZMKdiu7r8=",
-        "owner": "GabrielPony",
+        "lastModified": 1766412328,
+        "narHash": "sha256-cWOD0piayVnrzOzxsQMsnB2OKYW60/gI41a4fGD9pps=",
+        "owner": "gagapony",
         "repo": "dotfiles",
-        "rev": "96f03298ede0abad4802bc678d62c044b8a2fbf8",
+        "rev": "759b7baeedd6036674adb4065f0814dbc12639f9",
         "type": "github"
       },
       "original": {
-        "owner": "GabrielPony",
+        "owner": "gagapony",
         "repo": "dotfiles",
         "type": "github"
       }
@@ -1375,11 +1391,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1766070988,
-        "narHash": "sha256-G/WVghka6c4bAzMhTwT2vjLccg/awmHkdKSd2JrycLc=",
+        "lastModified": 1766309749,
+        "narHash": "sha256-3xY8CZ4rSnQ0NqGhMKAy5vgC+2IVK0NoVEzDoOh4DA4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c6245e83d836d0433170a16eb185cefe0572f8b8",
+        "rev": "a6531044f6d0bef691ea18d4d4ce44d0daa6e816",
         "type": "github"
       },
       "original": {
@@ -1599,6 +1615,7 @@
         "alejandra": "alejandra",
         "anyrun": "anyrun",
         "apple-fonts": "apple-fonts",
+        "catppuccin": "catppuccin",
         "catppuccin-bat": "catppuccin-bat",
         "catppuccin-cava": "catppuccin-cava",
         "catppuccin-nix": "catppuccin-nix",

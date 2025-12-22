@@ -50,7 +50,7 @@ in
 
       # Color theme
       catppuccin.catppuccin-vsc
-      catppuccin.catppuccin-vsc-icons
+
 
       # Vim
       vscodevim.vim
