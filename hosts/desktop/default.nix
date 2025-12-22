@@ -4,6 +4,7 @@
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
     inputs.nur.modules.nixos.default
+    inputs.nix-colors.homeManagerModules.default
 
     ./addon-configuration.nix
     ./hardware-configuration.nix

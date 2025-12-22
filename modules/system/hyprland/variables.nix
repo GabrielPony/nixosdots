@@ -1,4 +1,7 @@
-{ ... }:
+{ config, ... }:
+let
+  theme-name = config.var.theme-name;
+in
 {
   home.sessionVariables = {
     MOZ_WEBRENDER = "1";
@@ -25,7 +28,7 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     GTK_IM_MODULE = "wayland";
-    GTK_THEME = "FlatColor:dark";
+    GTK_THEME = theme-name;
     # GLFW_IM_MODULE = "fcitx";
     INPUT_METHOD = "fcitx";
     XMODIFIERS = "@im=fcitx";

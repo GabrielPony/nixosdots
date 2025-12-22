@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ inputs, config, ... }: {
   imports = [ ./variables-config.nix ];
 
   config.var = {
@@ -43,6 +43,8 @@
       fcitx5-accent = "blue";
       cursor-accent = "light";
     };
+
+    colorScheme = inputs.nix-colors.colorSchemes."catppuccin-${config.var.catppuccin.flavor}";
 
     # theme = import ../../themes/var/pinky.nix;
   };

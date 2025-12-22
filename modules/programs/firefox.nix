@@ -26,6 +26,10 @@ in
 
   programs.chromium = {
     enable = true;
+    commandLineArgs = [
+      "--gtk-version=4"
+      "--ozone-platform=wayland"
+    ];
   };
 
   # home.activation.cleanFirefoxSearch = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''

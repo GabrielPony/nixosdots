@@ -103,7 +103,6 @@
     "custom/launcher" = {
       format = "";
       on-click = "rofi";
-      on-click-right = "wallpaper-picker";
       tooltip = "false";
     };
 

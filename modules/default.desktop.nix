@@ -30,7 +30,6 @@
     # ./programs/yazi
     ./programs/thunar.nix
     ./programs/lazygit.nix
-    ./programs/nautilus.nix
     # ./programs/nh
     ./programs/firefox.nix
     # ./programs/server-page
@@ -45,7 +44,7 @@
     ./system/hyprland/default.nix
     ./system/scripts/scripts.nix
     ./system/swaync/swaync.nix
-    # ./system/gtk/gtk.nix
+    ./system/gtk/gtk.nix
     # ./system/hypridle
     # ./system/hyprlock
     # ./system/hyprpanel

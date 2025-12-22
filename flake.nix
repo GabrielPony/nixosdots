@@ -72,6 +72,7 @@
     dotfiles = {
       url = "github:gagapony/dotfiles";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = { nixpkgs, self, ... } @ inputs:
