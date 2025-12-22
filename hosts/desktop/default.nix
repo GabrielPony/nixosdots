@@ -35,6 +35,7 @@
 
 
     # ./../../modules/themes/catppuccin/nixos.nix
+    ./../../modules/themes/stylix/default.nix
     ];
 
 

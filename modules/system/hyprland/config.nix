@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -10,7 +10,8 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "nm-applet &"
         "wl-clip-persist --clipboard regular"
-        "swaybg -m fill -i ~/Pictures/wallpapers/cat-leaves.png &"
+        # "swaybg -m fill -i ${inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png"} &"
+        "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
         "fcitx5 -d --replace &"
         "poweralertd &"
         "waybar &"

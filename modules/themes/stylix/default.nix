@@ -1,17 +1,21 @@
-{ inputs, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
+let
+  colors = config.var.colorScheme.palette;
+  flavor = config.var.catppuccin.flavor;
+in
 {
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${flavor}.yaml";
     cursor = {
-      package = pkgs.nordzy-cursor-theme;
-      name = "Nordzy-cursors-white";
-      # package = pkgs.catppuccin-cursors;
-      # name = "mochaMauve";
+      # package = pkgs.nordzy-cursor-theme;
+      # name = "Nordzy-cursors-white";
+      package = pkgs.catppuccin-cursors;
+      name = "mochaMauve";
       size = 24;
-
     };
+
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.monaspace;
@@ -50,6 +54,6 @@
       nixos-icons.enable = true;
     };
 
-    # image = inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png";
+    image = inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png";
   };
 }

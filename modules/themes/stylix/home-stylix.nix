@@ -1,4 +1,7 @@
 { inputs, config, pkgs, lib, ... }:
+let
+  flavor = config.var.catppuccin.flavor;
+in
 {
   home.file = {
     "Pictures/wallpapers/others/cat-leaves.png".source = inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png";
@@ -25,7 +28,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${flavor}.yaml";
 
     cursor = {
       package = pkgs.nordzy-cursor-theme;
@@ -37,6 +40,7 @@
     };
 
     targets = {
+      rofi.enable = true;
       fcitx5.enable = true;
       spicetify.enable = true;
       hyprpaper.enable = true;

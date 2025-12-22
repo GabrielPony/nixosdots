@@ -7,8 +7,6 @@ in {
 
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = flavor;
     enabledExtensions = with spicePkgs.extensions; [
       keyboardShortcut
       shuffle

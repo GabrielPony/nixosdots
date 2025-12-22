@@ -7,7 +7,7 @@
   };
 
   xdg.configFile."rofi/config.rasi".text = ''
-    configuration{
+    configuration {
       modi: "run,drun,window";
       lines: 5;
       cycle: false;
@@ -22,7 +22,6 @@
       display-drun: " Apps ";
       display-run: " Run ";
       display-window: " Window ";
-      /* display-Network: " Network"; */
       sidebar-mode: true;
       sorting-method: "fzf";
     }
@@ -38,26 +37,26 @@
       height: 600px;
       width: 900px;
       border: 2px;
-      lavenderor: @lavender;
-      background-color: @base;
+      border-color: @blue;
+      background-color: @background;
       border-radius: 12px;
     }
 
     mainbox {
-      background-color: @base;
+      background-color: @background;
     }
 
     inputbar {
       children: [prompt,entry];
-      background-color: @surface0;
+      background-color: @lightbg;
       border-radius: 5px;
       padding: 0px;
     }
 
     prompt {
-      background-color: @green;
+      background-color: @blue;
       padding: 4px;
-      text-color: @surface0;
+      text-color: @background;
       border-radius: 3px;
       margin: 10px 0px 10px 10px;
     }
@@ -70,8 +69,8 @@
     entry {
       padding: 6px;
       margin: 10px 10px 10px 5px;
-      text-color: @text;
-      background-color: @base;
+      text-color: @foreground;
+      background-color: @background;
       border-radius: 3px;
     }
 
@@ -80,15 +79,15 @@
       padding: 6px 0px 0px;
       margin: 10px 0px 0px 6px;
       columns: 3;
-      background-color: @base;
+      background-color: @background;
       cycle: true;
     }
 
     element {
       padding: 8px;
       margin: 0px 10px 4px 4px;
-      background-color: @base;
-      text-color: @text;
+      background-color: @background;
+      text-color: @foreground;
     }
 
     element-icon {
@@ -96,26 +95,26 @@
     }
 
     element selected {
-      background-color:  @surface1 ;
-      text-color: @subtext0;
+      background-color: @selected-normal-background;
+      text-color: @selected-normal-text;
       border-radius: 3px;
     }
 
     mode-switcher {
-      spacing: 0;
+        spacing: 0;
     }
 
     button {
       padding: 10px;
-      background-color: @surface0;
-      text-color: @overlay0;
+      background-color: @lightbg;
+      text-color: @foreground;
       vertical-align: 0.5;
       horizontal-align: 0.5;
     }
 
     button selected {
-      background-color: @base;
-      text-color: @green;
+      background-color: @background;
+      text-color: @blue;
     }
   '';
 }

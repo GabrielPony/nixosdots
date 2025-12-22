@@ -10,10 +10,6 @@ in
     inputs.catppuccin-nix.homeModules.catppuccin
   ];
 
-  home.file = {
-    "Pictures/wallpapers/cat-leaves.png".source = inputs.nixy-wallpapers + "/wallpapers/cat-leaves.png";
-  };
-
   catppuccin = {
     enable = true;    # 全局启用
     flavor = flavor;  # 推荐 mocha (深色)，还有 latte, frappe, macchiato

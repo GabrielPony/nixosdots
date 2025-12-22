@@ -6,7 +6,8 @@
     ../nixos/variables.nix
 
     # themes
-    ./themes/catppuccin/user.nix
+    ./themes/stylix/home-stylix.nix
+    # ./themes/catppuccin/user.nix
     # Programs
     ./programs/python.nix
     ./programs/packages.nix
@@ -44,7 +45,7 @@
     ./system/hyprland/default.nix
     ./system/scripts/scripts.nix
     ./system/swaync/swaync.nix
-    ./system/gtk/gtk.nix
+    # ./system/gtk/gtk.nix
     # ./system/hypridle
     # ./system/hyprlock
     # ./system/hyprpanel
