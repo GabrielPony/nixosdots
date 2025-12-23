@@ -3,21 +3,22 @@
   programs.waybar.settings.mainBar = {
     position = "top";
     layer = "top";
-    height = 10;
-    margin-top = 0;
+    height = 30;
+    margin-top = 10;
     margin-bottom = 0;
-    margin-left = 0;
-    margin-right = 0;
+    margin-left = 10;
+    margin-right = 10;
     modules-left = [
       "custom/launcher"
       "hyprland/workspaces"
     ];
     modules-center = [
-      # "custom/playerctl"
+      "custom/playerctl"
       "clock"
     ];
     modules-right = [
       "tray"
+      "custom/sep"
       "cpu"
       "memory"
       "disk"
@@ -63,11 +64,11 @@
     disk = {
       # path = "/";
       format = "󰋊  {percentage_used}%";
-      interval = 60;
+      interval = 2;
     };
     network = {
       format-wifi = "   {signalStrength}%";
-      format-ethernet = "󰀂  ";
+      format-ethernet = "󰀂";
       tooltip-format = "Connected to {essid} {ifname} via {gwaddr}";
       format-linked = "{ifname} (No IP)";
       format-disconnected = "󰖪 ";
@@ -100,25 +101,30 @@
       tooltip = true;
       tooltip-format = "{time}";
     };
+
+    "custom/sep" = {
+      format = "<span foreground='#585b70'> | </span>";
+      tooltip = false;
+    };
     "custom/launcher" = {
       format = "";
       on-click = "rofi";
       tooltip = "false";
     };
 
-    # "custom/playerctl" = {
-    #   format = "{icon}  <span>{}</span>";
-    #   return-type = "json";
-    #   max-length = 55;
-    #   exec = ''playerctl -a metadata --format '{"text": "  {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
-    #   on-click-middle = "playerctl previous";
-    #   on-click = "playerctl play-pause";
-    #   on-click-right = "playerctl next";
-    #   format-icons = {
-    #     Paused = "<span foreground='#6dd9d9'></span>";
-    #     Playing = "<span foreground='#82db97'></span>";
-    #   };
-    # };
+    "custom/playerctl" = {
+      format = "{icon}  <span>{text}</span>";
+      return-type = "json";
+      max-length = 55;
+      exec = ''playerctl -a metadata --format '{"text": "  {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F || true'';
+      on-click-middle = "playerctl previous";
+      on-click = "playerctl play-pause";
+      on-click-right = "playerctl next";
+      format-icons = {
+        Paused = "<span foreground='#6dd9d9'></span>";
+        Playing = "<span foreground='#82db97'></span>";
+      };
+    };
 
     "custom/notification" = {
       tooltip = false;

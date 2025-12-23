@@ -37,6 +37,8 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 1;
+        # "col.active_border"="#b4befe";
+        # "col.inactive_border"="#45475a";
         # 注意：此处已删除 border_part_of_window 和 no_border_on_floating
       };
 
@@ -89,6 +91,19 @@
           render_power = 3;
         };
       };
+
+      layerrule = [
+        {
+          name = "waybar";
+          "match:namespace" = "waybar";
+          blur = true;
+        }
+        {
+          name = "rofi";
+          "match:namespace" = "rofi";
+          blur_popups = true;
+        }
+      ];
 
       animations = {
         enabled = true;

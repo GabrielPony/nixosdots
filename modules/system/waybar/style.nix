@@ -7,7 +7,7 @@ let custom = {
     secondary_accent= "89b4fa";
     tertiary_accent = "f5f5f5";
     background = "11111B";
-    opacity = "0.90";
+    opacity = "0.80";
 };
 in
 {
@@ -15,7 +15,7 @@ in
 
     * {
         border: 2px;
-        border-radius: 3px;
+        border-radius: 10px;
         padding: 0;
         margin: 0;
         min-height: 0px;
@@ -26,6 +26,7 @@ in
 
     window#waybar {
         background: #171724 ;
+        border: 1px solid #45475a;
     }
 
     #workspaces {
