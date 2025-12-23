@@ -9,10 +9,8 @@ in
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${flavor}.yaml";
     cursor = {
-      # package = pkgs.nordzy-cursor-theme;
-      # name = "Nordzy-cursors-white";
-      package = pkgs.catppuccin-cursors;
-      name = "mochaMauve";
+      package = pkgs.catppuccin-cursors.mochaLight;
+      name = "catppuccin-mocha-light-cursors";
       size = 24;
     };
 

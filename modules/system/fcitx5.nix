@@ -16,6 +16,15 @@ in
     ];
   };
 
+  home.file.".config/fcitx5/conf/classicui.conf" = {
+    force = true;
+    text = ''
+    Vertical Candidate List=False
+    Font="MonaspiceAr Nerd Font 13"
+    Theme=stylix
+  '';
+  };
+
   home.file.".config/fcitx5/profile" = {
     force = true;
     text = ''

@@ -30,15 +30,6 @@ in
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${flavor}.yaml";
 
-    cursor = {
-      package = pkgs.nordzy-cursor-theme;
-      name = "Nordzy-cursors-white";
-      # package = pkgs.catppuccin-cursors;
-      # name = "mochaMauve";
-      size = 24;
-
-    };
-
     targets = {
       rofi.enable = true;
       fcitx5.enable = true;
@@ -47,7 +38,7 @@ in
       waybar.enable = true;
       hyprlock.enable = true;
       gedit.enable = true;
-      firefox.enable = true;
+      # firefox.enable = true;
       gtk.enable = true;
       gtk.flatpakSupport.enable = true;
     };
