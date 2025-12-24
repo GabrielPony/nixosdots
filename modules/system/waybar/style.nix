@@ -25,7 +25,7 @@ in
     }
 
     window#waybar {
-        background: #171724 ;
+        background: alpha(@base00, ${custom.opacity});
         border: 1px solid #45475a;
     }
 

@@ -33,6 +33,12 @@ in
   stylix = {
     enable = true;
     autoEnable = true;
+    # opacity = {
+    #   popups = 0.8;
+    #   applications = 0.8;
+    #   terminal = 0.8;
+    #   desktop = 0.8;
+    # };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${flavor}.yaml";
 
     targets = {

@@ -96,12 +96,14 @@
         {
           name = "waybar";
           "match:namespace" = "waybar";
+          ignore_alpha=0.5;
           blur = true;
         }
         {
           name = "rofi";
           "match:namespace" = "rofi";
-          blur_popups = true;
+          ignore_alpha=0.5;
+          blur = true;
         }
       ];
 
