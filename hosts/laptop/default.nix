@@ -30,10 +30,11 @@
     ../../nixos/virtualization.nix
     ../../nixos/xdg-portal.nix
     ../../nixos/gamescope.nix
+    ../../nixos/power-manager.nix
 
     # Choose your theme here
 
-    # ../../modules/themes/stylix/default.nix
+    ../../modules/themes/stylix/default.nix
     ];
 
 
@@ -42,5 +43,4 @@
   # Don't touch this
   # nix.nixPath = lib.mkForce ["/etc/nix/inputs"];
   system.stateVersion = config.var.version;
-  powerManagement.cpuFreqGovernor = "performance";
 }
