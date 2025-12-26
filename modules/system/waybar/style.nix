@@ -12,9 +12,8 @@ let custom = {
 in
 {
   programs.waybar.style = ''
-
     * {
-        border: 2px;
+        border: none;
         border-radius: 10px;
         padding: 0;
         margin: 0;
@@ -31,67 +30,33 @@ in
 
     #workspaces {
         font-size: 18px;
-        padding-left: 15px;
-
+        padding-left: 10px;
+        padding-right: 10px;
     }
+
     #workspaces button {
         color: ${custom.text_color};
-        padding-left:  6px;
-        padding-right: 6px;
+        border-radius: 1;
+        padding: 0 6px;
     }
+
     #workspaces button.empty {
         color: #6c7086;
     }
+
     #workspaces button.active {
         color: #b4befe;
     }
 
-    #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery, #custom-notification {
+    #cpu, #memory, #disk, #tray, #pulseaudio, #battery, #network, #clock, #custom-notification {
         font-size: ${custom.font_size};
         color: ${custom.text_color};
-    }
-
-    #cpu {
-        padding-left: 15px;
-        padding-right: 9px;
-        margin-left: 7px;
-    }
-    #memory {
-        padding-left: 9px;
-        padding-right: 9px;
-    }
-    #disk {
-        padding-left: 9px;
-        padding-right: 15px;
+        padding: 0 8px;
+        margin: 0 4px;
     }
 
     #tray {
-        padding: 0 20px;
-        margin-left: 7px;
-    }
-
-    #pulseaudio {
-        padding-left: 15px;
-        padding-right: 9px;
-        margin-left: 7px;
-    }
-    #battery {
-        padding-left: 9px;
-        padding-right: 9px;
-    }
-    #network {
-        padding-left: 9px;
-        padding-right: 30px;
-    }
-
-    custom-notification {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    #clock {
-        padding-left: 9px;
-        padding-right: 15px;
+        padding: 0 10px;
     }
 
     #custom-launcher {
@@ -102,4 +67,4 @@ in
         padding-right: 15px;
     }
   '';
-}
+  }
