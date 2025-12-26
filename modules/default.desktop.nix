@@ -40,6 +40,7 @@
 
     # System (Desktop environment like stuff)
     ./system/rofi.nix
+    ./system/btop.nix
     ./system/fcitx5.nix
     ./system/waybar/default.nix
     ./system/hyprland/default.nix
