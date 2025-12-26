@@ -20,7 +20,6 @@ in
     evince # gnome pdf viewer
     eza # ls replacement
     entr # perform action when file change
-    ag
     fd # find replacement
     file # Show file information
     fzf # fuzzy finder
@@ -106,6 +105,7 @@ in
     direnv
     nix-direnv
     brightnessctl
+    adwaita-icon-theme
   ]);
   home.file.".local/share/applications/STM32CubeMX.desktop".source =
     "${_stm32cubemx}/share/applications/STM32CubeMX.desktop";

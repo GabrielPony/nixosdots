@@ -13,7 +13,7 @@
       cycle: false;
       font: "JetBrainsMono NF Bold 14";
       show-icons: true;
-      icon-theme: "Papirus-dark";
+      icon-theme: "Papirus-Dark";
       terminal: "kitty";
       drun-display-format: "{name}";
       window-format: "{w} · {c} · {t}";

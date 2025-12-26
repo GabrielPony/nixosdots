@@ -3,30 +3,25 @@ let
   username = config.var.username;
 in
 {
-  # Add user to libvirtd group
   users.users.${username}.extraGroups = [ "libvirtd" ];
 
-  # Install necessary packages
   environment.systemPackages = with pkgs; [
-    virt-manager
     virt-viewer
-    spice
-    spice-gtk
-    spice-protocol
+    qemu_kvm
     virtio-win
-    win-spice
-    adwaita-icon-theme
   ];
 
-  # Manage the virtualisation services
+  programs.virt-manager.enable = true;
+
   virtualisation = {
     libvirtd = {
       enable = true;
       qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
         swtpm.enable = true;
       };
     };
     spiceUSBRedirection.enable = true;
   };
-  services.spice-vdagentd.enable = true;
 }
